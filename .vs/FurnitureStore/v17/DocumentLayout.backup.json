@@ -3,12 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE1AFB22-A896-4ECA-B2AF-CAE6B54F90AD}|frontend\\frontend.esproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\frontend\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{EE1AFB22-A896-4ECA-B2AF-CAE6B54F90AD}|frontend\\frontend.esproj|solutionrelative:frontend\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\function1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\function1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\migrations\\20250414160933_v1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\migrations\\20250414160933_v1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\dto\\userrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\dto\\userrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\interfaces\\ijwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\interfaces\\ijwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\interfaces\\ipasswordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\interfaces\\ipasswordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\services\\passwordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\services\\passwordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\data\\systemdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\data\\systemdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +71,184 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "App.jsx",
-              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\frontend\\src\\App.jsx",
-              "RelativeDocumentMoniker": "frontend\\src\\App.jsx",
-              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\frontend\\src\\App.jsx",
-              "RelativeToolTip": "frontend\\src\\App.jsx",
+              "Title": "Functions.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Functions.cs",
+              "RelativeDocumentMoniker": "backend\\Functions.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Functions.cs*",
+              "RelativeToolTip": "backend\\Functions.cs*",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAswHoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T14:37:37.672Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20250414160933_V1.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Migrations\\20250414160933_V1.cs",
+              "RelativeDocumentMoniker": "backend\\Migrations\\20250414160933_V1.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Migrations\\20250414160933_V1.cs",
+              "RelativeToolTip": "backend\\Migrations\\20250414160933_V1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-04-14T14:40:14.507Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T16:09:34.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Dto\\UserRequestDto.cs",
+              "RelativeDocumentMoniker": "backend\\Dto\\UserRequestDto.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Dto\\UserRequestDto.cs",
+              "RelativeToolTip": "backend\\Dto\\UserRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:57:13.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "backend\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "backend\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:49:22.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IPasswordService.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IPasswordService.cs",
+              "RelativeDocumentMoniker": "backend\\Interfaces\\IPasswordService.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IPasswordService.cs",
+              "RelativeToolTip": "backend\\Interfaces\\IPasswordService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:48:50.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IJwtService.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IJwtService.cs",
+              "RelativeDocumentMoniker": "backend\\Interfaces\\IJwtService.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IJwtService.cs",
+              "RelativeToolTip": "backend\\Interfaces\\IJwtService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:48:36.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PasswordService.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\PasswordService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\PasswordService.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\PasswordService.cs",
+              "RelativeToolTip": "backend\\Services\\PasswordService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:46:42.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\JwtService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\JwtService.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\JwtService.cs",
+              "RelativeToolTip": "backend\\Services\\JwtService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:46:27.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\UserService.cs",
+              "RelativeToolTip": "backend\\Services\\UserService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:46:15.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Models\\User.cs",
+              "RelativeDocumentMoniker": "backend\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Models\\User.cs",
+              "RelativeToolTip": "backend\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:44:28.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SystemDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Data\\SystemDbContext.cs",
+              "RelativeDocumentMoniker": "backend\\Data\\SystemDbContext.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Data\\SystemDbContext.cs",
+              "RelativeToolTip": "backend\\Data\\SystemDbContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwDkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:41:15.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "backend",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\backend.csproj",
+              "RelativeDocumentMoniker": "backend\\backend.csproj",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\backend.csproj",
+              "RelativeToolTip": "backend\\backend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-14T15:39:08.885Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Function1.cs",
-              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Function1.cs",
-              "RelativeDocumentMoniker": "backend\\Function1.cs",
-              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Function1.cs",
-              "RelativeToolTip": "backend\\Function1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABUAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "backend\\Program.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Program.cs",
+              "RelativeToolTip": "backend\\Program.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAMwDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T14:37:37.672Z",
+              "WhenOpened": "2025-04-14T15:36:39.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "local.settings.json",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\local.settings.json",
+              "RelativeDocumentMoniker": "backend\\local.settings.json",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\local.settings.json",
+              "RelativeToolTip": "backend\\local.settings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-14T15:32:13.676Z",
               "EditorCaption": ""
             }
           ]
