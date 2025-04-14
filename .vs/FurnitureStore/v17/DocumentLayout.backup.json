@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EE1AFB22-A896-4ECA-B2AF-CAE6B54F90AD}|frontend\\frontend.esproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\frontend\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{EE1AFB22-A896-4ECA-B2AF-CAE6B54F90AD}|frontend\\frontend.esproj|solutionrelative:frontend\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\function1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\function1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.jsx",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\frontend\\src\\App.jsx",
+              "RelativeDocumentMoniker": "frontend\\src\\App.jsx",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\frontend\\src\\App.jsx",
+              "RelativeToolTip": "frontend\\src\\App.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-04-14T14:40:14.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Function1.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Function1.cs",
+              "RelativeDocumentMoniker": "backend\\Function1.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Function1.cs",
+              "RelativeToolTip": "backend\\Function1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T14:37:37.672Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
