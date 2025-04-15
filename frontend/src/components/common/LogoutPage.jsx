@@ -1,19 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../utils/authContext.jsx"; // Make sure this path is correct
 
-const LogoutPage = ({ setUser, setRole }) => {
+const LogoutPage = () => {
   const navigate = useNavigate();
+  const { setUser, setRole } = useContext(AuthContext); // Use the context to update the state
 
   useEffect(() => {
-    // Clear the authentication token
+    // Clear the authentication token from localStorage
     localStorage.removeItem("authToken");
 
-    // Reset user and role state
-    setUser(false);
-    setRole(null);
+    // Reset the user and role state via context
+    setUser(false); // Set the user state to false, meaning logged out
+    setRole(null); // Reset the role to null
 
-    // Redirect to login page after logout
-    navigate("/login");
+    // Redirect to login page after a short delay
+
+    navigate("/login"); // Redirect to the login page
   }, [navigate, setUser, setRole]);
 
   return (
