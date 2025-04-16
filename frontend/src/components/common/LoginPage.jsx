@@ -10,6 +10,8 @@ const LoginPage = ({}) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // "error" or "success"
 
   const { setUser, setRole } = useContext(AuthContext);
 

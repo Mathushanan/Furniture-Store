@@ -74,9 +74,9 @@
               "Title": "Functions.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Functions.cs",
               "RelativeDocumentMoniker": "backend\\Functions.cs",
-              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Functions.cs*",
-              "RelativeToolTip": "backend\\Functions.cs*",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAswHoAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Functions.cs",
+              "RelativeToolTip": "backend\\Functions.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAswHoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-14T14:37:37.672Z",
               "IsPinned": true,
@@ -92,8 +92,7 @@
               "RelativeToolTip": "backend\\Migrations\\20250414160933_V1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T16:09:34.517Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T16:09:34.517Z"
             },
             {
               "$type": "Document",
@@ -105,8 +104,7 @@
               "RelativeToolTip": "backend\\Dto\\UserRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:57:13.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:57:13.034Z"
             },
             {
               "$type": "Document",
@@ -118,8 +116,7 @@
               "RelativeToolTip": "backend\\Interfaces\\IUserService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:49:22.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:49:22.392Z"
             },
             {
               "$type": "Document",
@@ -131,8 +128,7 @@
               "RelativeToolTip": "backend\\Interfaces\\IPasswordService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:48:50.191Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:48:50.191Z"
             },
             {
               "$type": "Document",
@@ -144,8 +140,7 @@
               "RelativeToolTip": "backend\\Interfaces\\IJwtService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:48:36.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:48:36.041Z"
             },
             {
               "$type": "Document",
@@ -157,8 +152,7 @@
               "RelativeToolTip": "backend\\Services\\PasswordService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:46:42.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:46:42.946Z"
             },
             {
               "$type": "Document",
@@ -170,8 +164,7 @@
               "RelativeToolTip": "backend\\Services\\JwtService.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:46:27.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:46:27.584Z"
             },
             {
               "$type": "Document",
@@ -183,8 +176,7 @@
               "RelativeToolTip": "backend\\Services\\UserService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAuwBcAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:46:15.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:46:15.225Z"
             },
             {
               "$type": "Document",
@@ -196,8 +188,7 @@
               "RelativeToolTip": "backend\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:44:28.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:44:28.463Z"
             },
             {
               "$type": "Document",
@@ -209,21 +200,19 @@
               "RelativeToolTip": "backend\\Data\\SystemDbContext.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAxwDkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:41:15.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:41:15.188Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "backend",
+              "Title": "backend.csproj",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\backend.csproj",
               "RelativeDocumentMoniker": "backend\\backend.csproj",
               "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\backend.csproj",
               "RelativeToolTip": "backend\\backend.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-14T15:39:08.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:39:08.885Z"
             },
             {
               "$type": "Document",
@@ -235,8 +224,7 @@
               "RelativeToolTip": "backend\\Program.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAMwDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:36:39.285Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:36:39.285Z"
             },
             {
               "$type": "Document",
@@ -248,8 +236,7 @@
               "RelativeToolTip": "backend\\local.settings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-14T15:32:13.676Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:32:13.676Z"
             }
           ]
         }

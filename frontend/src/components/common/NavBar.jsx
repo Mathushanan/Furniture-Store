@@ -45,52 +45,56 @@ const Navbar = () => {
             className="collapse navbar-collapse justify-content-center"
             id="navbarNav"
           >
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a
-                  className={`nav-link ${
-                    activeTab === "home" ? "active text-primary" : ""
-                  }`}
-                  href="/#products"
-                  onClick={() => handleTabClick("home")}
-                >
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className={`nav-link ${
-                    activeTab === "about" ? "active text-primary" : ""
-                  }`}
-                  href="/#about"
-                  onClick={() => handleTabClick("about")}
-                >
-                  About
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className={`nav-link ${
-                    activeTab === "services" ? "active text-primary" : ""
-                  }`}
-                  href="/#services"
-                  onClick={() => handleTabClick("services")}
-                >
-                  Services
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className={`nav-link ${
-                    activeTab === "contact" ? "active text-primary" : ""
-                  }`}
-                  href="/#footer"
-                  onClick={() => handleTabClick("contact")}
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
+            {!user ? (
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <a
+                    className={`nav-link ${
+                      activeTab === "home" ? "active text-primary" : ""
+                    }`}
+                    href="/#products"
+                    onClick={() => handleTabClick("home")}
+                  >
+                    Home
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className={`nav-link ${
+                      activeTab === "about" ? "active text-primary" : ""
+                    }`}
+                    href="/#about"
+                    onClick={() => handleTabClick("about")}
+                  >
+                    About
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className={`nav-link ${
+                      activeTab === "services" ? "active text-primary" : ""
+                    }`}
+                    href="/#services"
+                    onClick={() => handleTabClick("services")}
+                  >
+                    Services
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    className={`nav-link ${
+                      activeTab === "contact" ? "active text-primary" : ""
+                    }`}
+                    href="/#footer"
+                    onClick={() => handleTabClick("contact")}
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            ) : (
+              <></>
+            )}
           </div>
 
           {/* Login button on the right */}

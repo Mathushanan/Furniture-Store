@@ -1,13 +1,13 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Dashboard from "../Dashboard.jsx";
+import AdminDashboard from "../admin/AdminDashboard.jsx";
 
 const AdminRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Navigate to="dashboard" />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Navigate to="admin-dashboard" />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
       </Routes>
     </div>
   );

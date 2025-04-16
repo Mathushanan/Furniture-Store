@@ -12,8 +12,8 @@ import { useState, useEffect, useContext } from "react"; // Added useContext
 import { AuthContext } from "./utils/authContext.jsx"; // Import the AuthContext
 import HomePage from "./components/common/HomePage";
 import LoginPage from "./components/common/LoginPage";
-import CustomerRoutes from "./components/admin/AdminRoutes";
-import AdminRoutes from "./components/customer/CustomerRoutes";
+import CustomerRoutes from "./components/customer/CustomerRoutes";
+import AdminRoutes from "./components/admin/AdminRoutes";
 import LogoutPage from "./components/common/LogoutPage";
 import verifyJwtToken from "./utils/verifyJwtToken";
 import ProtectedRoute from "./components/common/ProtectedRoute";

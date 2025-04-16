@@ -1,13 +1,13 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Dashboard from "../Dashboard.jsx";
+import CustomerDashboard from "../customer/CustomerDashboard.jsx";
 
 const CustomerRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Navigate to="dashboard" />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Navigate to="customer-dashboard" />} />
+        <Route path="/customer-dashboard" element={<CustomerDashboard />} />
       </Routes>
     </div>
   );

@@ -94,7 +94,7 @@ const Footer = () => {
               </p>
               <p>
                 <i className="bi bi-envelope-fill me-2"></i>
-                support@furnistyle.com
+                support@furniturestore.com
               </p>
             </div>
           </div>
