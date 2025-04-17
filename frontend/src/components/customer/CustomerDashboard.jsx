@@ -7,16 +7,39 @@ import bed from "../../assets/bed_vector.jpg"; // Adjust the path as necessary
 import cupboard from "../../assets/cupboard_vector.jpg"; // Adjust the path as necessary
 import { useState } from "react";
 import { HiOutlineSwitchHorizontal } from "react-icons/hi";
+import RoomScene from "./RoomScene.jsx";
 
 const CustomerDashboard = () => {
-  const [is3D, setIs3D] = useState(false); // false = 2D, true = 3D
+  const [is3D, setIs3D] = useState(true);
+  const [wallColor, setWallColor] = useState("#ffffff");
+  const [wallHeight, setWallHeight] = useState(3);
+  const [wallThickness, setWallThickness] = useState(0.2);
+  const [furnitureColor, setFurnitureColor] = useState("#ff0000");
+  const [furnitureWidth, setFurnitureWidth] = useState(2);
+  const [furnitureHeight, setFurnitureHeight] = useState(1);
+  const [furnitureLength, setFurnitureLength] = useState(2);
+  const [isDraggingFurniture, setIsDraggingFurniture] = useState(false);
+  const [roomSize, setRoomSize] = useState(10);
+  const [furnitureList, setFurnitureList] = useState([]);
 
   const handleToggle = () => {
     setIs3D((prev) => !prev);
   };
 
   return (
-    <div className="container-fluid bg-light">
+    <div
+      className="container-fluid bg-light rounded"
+      style={{
+        backgroundImage: `
+                linear-gradient(to top, #ffffff 20%, #cce5ff 60%, #b3d9ff 100%),
+                linear-gradient(#ddd 1px, transparent 1px),
+                linear-gradient(to right, #ddd 1px, transparent 1px)
+        `,
+        backgroundSize: "100% 100%, 40px 40px, 40px 40px",
+        backgroundPosition: "center bottom, center bottom, center bottom",
+        backgroundRepeat: "no-repeat, repeat, repeat",
+      }}
+    >
       <div className="row vh-100">
         {/* Left Sidebar */}
         <div className="col-2 bg-white p-3 overflow-auto rounded shadow-lg">
@@ -51,16 +74,15 @@ const CustomerDashboard = () => {
               <div
                 className="border p-2 rounded text-center"
                 style={{ width: "100px" }}
+                draggable
+                onDragStart={(e) => {
+                  e.dataTransfer.setData("furniture-type", "chair");
+                }}
               >
                 <div>
-                  <img
-                    src={chair}
-                    alt=""
-                    className=""
-                    style={{ width: "75px" }}
-                  />
+                  <img src={chair} alt="Chair" style={{ width: "75px" }} />
                 </div>
-                <small className="text-secondary ">Chair</small>
+                <small className="text-secondary">Chair</small>
                 <span
                   className="badge bg-success ms-1"
                   style={{ fontSize: "9px" }}
@@ -90,196 +112,48 @@ const CustomerDashboard = () => {
                   NEW
                 </span>
               </div>
-
-              {/* table 01 */}
-              <div
-                className="border p-2 rounded text-center"
-                style={{ width: "100px" }}
-              >
-                <div>
-                  <img
-                    src={table}
-                    alt=""
-                    className=""
-                    style={{ width: "75px" }}
-                  />
-                </div>
-                <small className="text-secondary ">Table</small>
-                <span
-                  className="badge bg-success ms-1"
-                  style={{ fontSize: "9px" }}
-                >
-                  NEW
-                </span>
-              </div>
-
-              {/* table 02 */}
-              <div
-                className="border p-2 rounded text-center"
-                style={{ width: "100px" }}
-              >
-                <div>
-                  <img
-                    src={table}
-                    alt=""
-                    className=""
-                    style={{ width: "75px" }}
-                  />
-                </div>
-                <small className="text-secondary ">Table</small>
-                <span
-                  className="badge bg-success ms-1"
-                  style={{ fontSize: "9px" }}
-                >
-                  NEW
-                </span>
-              </div>
-
-              {/* sofa 01 */}
-              <div
-                className="border p-2 rounded text-center"
-                style={{ width: "100px" }}
-              >
-                <div>
-                  <img
-                    src={sofa}
-                    alt=""
-                    className=""
-                    style={{ width: "75px" }}
-                  />
-                </div>
-                <small className="text-secondary ">Sofa</small>
-                <span
-                  className="badge bg-success ms-1"
-                  style={{ fontSize: "9px" }}
-                >
-                  NEW
-                </span>
-              </div>
-
-              {/* sofa 02 */}
-              <div
-                className="border p-2 rounded text-center"
-                style={{ width: "100px" }}
-              >
-                <div>
-                  <img
-                    src={sofa}
-                    alt=""
-                    className=""
-                    style={{ width: "75px" }}
-                  />
-                </div>
-                <small className="text-secondary ">Sofa</small>
-                <span
-                  className="badge bg-success ms-1"
-                  style={{ fontSize: "9px" }}
-                >
-                  NEW
-                </span>
-              </div>
-
-              {/* bed 01 */}
-              <div
-                className="border p-2 rounded text-center"
-                style={{ width: "100px" }}
-              >
-                <div>
-                  <img
-                    src={bed}
-                    alt=""
-                    className=""
-                    style={{ width: "75px" }}
-                  />
-                </div>
-                <small className="text-secondary ">Bed</small>
-                <span
-                  className="badge bg-success ms-1"
-                  style={{ fontSize: "9px" }}
-                >
-                  NEW
-                </span>
-              </div>
-
-              {/* bed 02 */}
-              <div
-                className="border p-2 rounded text-center"
-                style={{ width: "100px" }}
-              >
-                <div>
-                  <img
-                    src={bed}
-                    alt=""
-                    className=""
-                    style={{ width: "75px" }}
-                  />
-                </div>
-                <small className="text-secondary ">Bed</small>
-                <span
-                  className="badge bg-success ms-1"
-                  style={{ fontSize: "9px" }}
-                >
-                  NEW
-                </span>
-              </div>
-
-              {/* cupboard 01 */}
-              <div
-                className="border p-2 rounded text-center"
-                style={{ width: "100px" }}
-              >
-                <div>
-                  <img
-                    src={cupboard}
-                    alt=""
-                    className=""
-                    style={{ width: "75px" }}
-                  />
-                </div>
-                <small className="text-secondary ">Cupboard</small>
-                <span
-                  className="badge bg-success ms-1"
-                  style={{ fontSize: "9px" }}
-                >
-                  NEW
-                </span>
-              </div>
-
-              {/* cupboard 02 */}
-              <div
-                className="border p-2 rounded text-center"
-                style={{ width: "100px" }}
-              >
-                <div>
-                  <img
-                    src={cupboard}
-                    alt=""
-                    className=""
-                    style={{ width: "75px" }}
-                  />
-                </div>
-                <small className="text-secondary ">Cupboard</small>
-                <span
-                  className="badge bg-success ms-1"
-                  style={{ fontSize: "9px" }}
-                >
-                  NEW
-                </span>
-              </div>
             </div>
           </div>
         </div>
 
         {/* Middle Content */}
-        <div className="col-8 bg-white p-3 d-flex justify-content-center align-items-center border border-primary">
-          <div className=" rounded w-100 h-100 d-flex justify-content-center align-items-center">
-            <p className="text-muted">[Home Design Preview Area]</p>
+        <div className="col-8 p-3 d-flex justify-content-center align-items-center">
+          <div
+            className="rounded w-100 h-100"
+            onDragOver={(e) => e.preventDefault()}
+            onDrop={(e) => {
+              const type = e.dataTransfer.getData("furniture-type");
+              if (type) {
+                const newFurniture = {
+                  id: Date.now(),
+                  type,
+                  position: [0, furnitureHeight / 2 + 0.1, 0],
+                  size: [furnitureWidth, furnitureHeight, furnitureLength],
+                  color: furnitureColor,
+                };
+                setFurnitureList((prev) => [...prev, newFurniture]);
+              }
+            }}
+          >
+            <RoomScene
+              wallColor={wallColor}
+              wallHeight={wallHeight}
+              roomSize={roomSize}
+              wallThickness={wallThickness}
+              furnitureColor={furnitureColor}
+              furnitureWidth={furnitureWidth}
+              furnitureHeight={furnitureHeight}
+              furnitureLength={furnitureLength}
+              isDraggingFurniture={isDraggingFurniture}
+              setIsDraggingFurniture={setIsDraggingFurniture}
+              furnitureList={furnitureList}
+            />
           </div>
         </div>
 
         {/* Right Sidebar */}
         <div className="col-2 p-0 rounded shadow-lg ">
-          <div className="bg-white border text-center rounded p-3">
+          <div className="bg-white  text-center rounded p-3">
             <h5 className="mb-2 text-start">Set the view</h5>
             <button
               className="btn border flex items-center justify-center gap-2 "
@@ -291,8 +165,45 @@ const CustomerDashboard = () => {
             </button>
           </div>
 
-          <div className=" bg-white  border mt-4 rounded p-3">
-            <h5 className="mb-4">Settings</h5>
+          <div className=" bg-white   mt-1 rounded p-3">
+            <h5 className="mb-2">Settings</h5>
+            <div className="form-group row align-items-center mb-2 ">
+              <div className="col-sm-6  ">
+                <label
+                  className=" small text-secondary "
+                  style={{
+                    fontSize: "12px",
+                    marginBottom: 0,
+                    display: "block",
+                  }}
+                >
+                  Room Size
+                </label>
+                <div className="">
+                  <input
+                    type="range"
+                    className="thin-slider p-0 m-0"
+                    style={{ marginTop: "0px" }}
+                    min="10"
+                    max="20"
+                    step="0.1"
+                    value={roomSize}
+                    onChange={(e) => setRoomSize(parseFloat(e.target.value))}
+                  />
+                </div>
+              </div>
+
+              <div className="col-sm-6 ">
+                <input
+                  type="number"
+                  className="form-control form-control-sm"
+                  placeholder="9'2&quot;"
+                  style={{ fontSize: "12px" }}
+                  value={roomSize}
+                  onChange={(e) => setRoomSize(parseFloat(e.target.value))}
+                />
+              </div>
+            </div>
             <div className="wall-settings">
               <h6 className="mb-2">Wall</h6>
               <div className="form-group row align-items-center mb-2">
@@ -307,44 +218,94 @@ const CustomerDashboard = () => {
                     type="color"
                     className="form-control form-control-color"
                     style={{ fontSize: "12px" }}
+                    onChange={(e) => setWallColor(e.target.value)}
                   />
                 </div>
               </div>
-              <div className="form-group row align-items-center mb-2">
-                <label
-                  className="col-sm-6 col-form-label small  text-secondary"
-                  style={{ fontSize: "12px" }}
-                >
-                  Wall Height
-                </label>
+
+              <div className="form-group row align-items-center mb-2 ">
+                <div className="col-sm-6  ">
+                  <label
+                    className=" small text-secondary "
+                    style={{
+                      fontSize: "12px",
+                      marginBottom: 0,
+                      display: "block",
+                    }}
+                  >
+                    Wall Height
+                  </label>
+                  <div className="">
+                    <input
+                      type="range"
+                      className="thin-slider p-0 m-0"
+                      style={{ marginTop: "0px" }}
+                      min="2"
+                      max="5"
+                      step="0.1"
+                      value={wallHeight}
+                      onChange={(e) =>
+                        setWallHeight(parseFloat(e.target.value))
+                      }
+                    />
+                  </div>
+                </div>
+
                 <div className="col-sm-6 ">
                   <input
                     type="number"
                     className="form-control form-control-sm"
                     placeholder="9'2&quot;"
                     style={{ fontSize: "12px" }}
+                    value={wallHeight}
+                    onChange={(e) => setWallHeight(parseFloat(e.target.value))}
                   />
                 </div>
               </div>
-              <div className="form-group row align-items-center mb-2">
-                <label
-                  className="col-sm-6 col-form-label small  text-secondary"
-                  style={{ fontSize: "12px" }}
-                >
-                  Wall Thickness
-                </label>
+              <div className="form-group row align-items-center mb-2 ">
+                <div className="col-sm-6  ">
+                  <label
+                    className=" small text-secondary "
+                    style={{
+                      fontSize: "12px",
+                      marginBottom: 0,
+                      display: "block",
+                    }}
+                  >
+                    Wall Thickness
+                  </label>
+                  <div className="">
+                    <input
+                      type="range"
+                      className="thin-slider p-0 m-0"
+                      style={{ marginTop: "0px" }}
+                      min="0.2"
+                      max="1"
+                      step="0.005"
+                      value={wallThickness}
+                      onChange={(e) =>
+                        setWallThickness(parseFloat(e.target.value))
+                      }
+                    />
+                  </div>
+                </div>
+
                 <div className="col-sm-6 ">
                   <input
                     type="number"
                     className="form-control form-control-sm"
-                    placeholder="9.45 in"
+                    placeholder="9'2&quot;"
                     style={{ fontSize: "12px" }}
+                    value={wallThickness}
+                    onChange={(e) =>
+                      setWallThickness(parseFloat(e.target.value))
+                    }
                   />
                 </div>
               </div>
             </div>
 
-            <div className="furniture-settings">
+            <div className="furniture-settings mt-4">
               <h6 className="mb-2">Furniture</h6>
               <div className="form-group row align-items-center mb-2">
                 <label
@@ -358,6 +319,7 @@ const CustomerDashboard = () => {
                     type="color"
                     className="form-control form-control-color"
                     style={{ fontSize: "12px" }}
+                    onChange={(e) => setFurnitureColor(e.target.value)}
                   />
                 </div>
               </div>
@@ -381,6 +343,10 @@ const CustomerDashboard = () => {
                       min="0"
                       max="20"
                       step="0.1"
+                      value={furnitureWidth}
+                      onChange={(e) =>
+                        setFurnitureWidth(parseFloat(e.target.value))
+                      }
                     />
                   </div>
                 </div>
@@ -391,6 +357,10 @@ const CustomerDashboard = () => {
                     className="form-control form-control-sm"
                     placeholder="9'2&quot;"
                     style={{ fontSize: "12px" }}
+                    value={furnitureWidth}
+                    onChange={(e) =>
+                      setFurnitureWidth(parseFloat(e.target.value))
+                    }
                   />
                 </div>
               </div>
@@ -414,6 +384,10 @@ const CustomerDashboard = () => {
                       min="0"
                       max="20"
                       step="0.1"
+                      value={furnitureHeight}
+                      onChange={(e) =>
+                        setFurnitureHeight(parseFloat(e.target.value))
+                      }
                     />
                   </div>
                 </div>
@@ -424,6 +398,10 @@ const CustomerDashboard = () => {
                     className="form-control form-control-sm"
                     placeholder="9'2&quot;"
                     style={{ fontSize: "12px" }}
+                    value={furnitureHeight}
+                    onChange={(e) =>
+                      setFurnitureHeight(parseFloat(e.target.value))
+                    }
                   />
                 </div>
               </div>
@@ -447,6 +425,10 @@ const CustomerDashboard = () => {
                       min="0"
                       max="20"
                       step="0.1"
+                      value={furnitureLength}
+                      onChange={(e) =>
+                        setFurnitureLength(parseFloat(e.target.value))
+                      }
                     />
                   </div>
                 </div>
@@ -457,39 +439,10 @@ const CustomerDashboard = () => {
                     className="form-control form-control-sm"
                     placeholder="9'2&quot;"
                     style={{ fontSize: "12px" }}
-                  />
-                </div>
-              </div>
-              <div className="form-group row align-items-center mb-2 ">
-                <div className="col-sm-6  ">
-                  <label
-                    className=" small text-secondary "
-                    style={{
-                      fontSize: "12px",
-                      marginBottom: 0,
-                      display: "block",
-                    }}
-                  >
-                    Elevation
-                  </label>
-                  <div className="">
-                    <input
-                      type="range"
-                      className="thin-slider p-0 m-0"
-                      style={{ marginTop: "0px" }}
-                      min="0"
-                      max="20"
-                      step="0.1"
-                    />
-                  </div>
-                </div>
-
-                <div className="col-sm-6 ">
-                  <input
-                    type="number"
-                    className="form-control form-control-sm"
-                    placeholder="9'2&quot;"
-                    style={{ fontSize: "12px" }}
+                    value={furnitureLength}
+                    onChange={(e) =>
+                      setFurnitureLength(parseFloat(e.target.value))
+                    }
                   />
                 </div>
               </div>
