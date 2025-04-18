@@ -10,7 +10,7 @@ import { HiOutlineSwitchHorizontal } from "react-icons/hi";
 import RoomScene from "./RoomScene.jsx";
 
 const CustomerDashboard = () => {
-  const [is3D, setIs3D] = useState(true);
+  const [viewMode, setViewMode] = useState("3D");
   const [wallColor, setWallColor] = useState("#ffffff");
   const [wallHeight, setWallHeight] = useState(3);
   const [wallThickness, setWallThickness] = useState(0.2);
@@ -21,9 +21,27 @@ const CustomerDashboard = () => {
   const [isDraggingFurniture, setIsDraggingFurniture] = useState(false);
   const [roomSize, setRoomSize] = useState(10);
   const [furnitureList, setFurnitureList] = useState([]);
+  const [selectedFurnitureId, setSelectedFurnitureId] = useState(null);
 
-  const handleToggle = () => {
-    setIs3D((prev) => !prev);
+  const toggleView = () => {
+    setViewMode((prev) => (prev === "3D" ? "2D" : "3D"));
+  };
+
+  const selectedFurniture = furnitureList.find(
+    (f) => f.id === selectedFurnitureId
+  );
+
+  const updateSelectedFurniture = (key, value) => {
+    setFurnitureList((prevList) =>
+      prevList.map((f) =>
+        f.id === selectedFurnitureId ? { ...f, [key]: value } : f
+      )
+    );
+  };
+  const updateFurniturePosition = (id, newPosition) => {
+    setFurnitureList((prev) =>
+      prev.map((f) => (f.id === id ? { ...f, position: newPosition } : f))
+    );
   };
 
   return (
@@ -147,6 +165,10 @@ const CustomerDashboard = () => {
               isDraggingFurniture={isDraggingFurniture}
               setIsDraggingFurniture={setIsDraggingFurniture}
               furnitureList={furnitureList}
+              selectedFurnitureId={selectedFurnitureId}
+              setSelectedFurnitureId={setSelectedFurnitureId}
+              setFurnitureList={setFurnitureList}
+              viewMode={viewMode}
             />
           </div>
         </div>
@@ -158,9 +180,9 @@ const CustomerDashboard = () => {
             <button
               className="btn border flex items-center justify-center gap-2 "
               style={{ fontSize: "14px" }}
-              onClick={handleToggle}
+              onClick={toggleView}
             >
-              {is3D ? "Switch to 2D" : "Switch to 3D"}{" "}
+              Switch to {viewMode === "3D" ? "2D" : "3D"}{" "}
               <HiOutlineSwitchHorizontal />
             </button>
           </div>
@@ -319,7 +341,14 @@ const CustomerDashboard = () => {
                     type="color"
                     className="form-control form-control-color"
                     style={{ fontSize: "12px" }}
-                    onChange={(e) => setFurnitureColor(e.target.value)}
+                    value={selectedFurniture?.color || furnitureColor}
+                    onChange={(e) => {
+                      if (selectedFurnitureId) {
+                        updateSelectedFurniture("color", e.target.value);
+                      } else {
+                        setFurnitureColor(e.target.value);
+                      }
+                    }}
                   />
                 </div>
               </div>
@@ -343,10 +372,17 @@ const CustomerDashboard = () => {
                       min="0"
                       max="20"
                       step="0.1"
-                      value={furnitureWidth}
-                      onChange={(e) =>
-                        setFurnitureWidth(parseFloat(e.target.value))
-                      }
+                      value={selectedFurniture?.size[0] || furnitureWidth}
+                      onChange={(e) => {
+                        const newWidth = parseFloat(e.target.value);
+                        if (selectedFurnitureId) {
+                          const newSize = [...selectedFurniture.size];
+                          newSize[0] = newWidth;
+                          updateSelectedFurniture("size", newSize);
+                        } else {
+                          setFurnitureWidth(newWidth);
+                        }
+                      }}
                     />
                   </div>
                 </div>
@@ -384,10 +420,17 @@ const CustomerDashboard = () => {
                       min="0"
                       max="20"
                       step="0.1"
-                      value={furnitureHeight}
-                      onChange={(e) =>
-                        setFurnitureHeight(parseFloat(e.target.value))
-                      }
+                      value={selectedFurniture?.size[1] || furnitureHeight}
+                      onChange={(e) => {
+                        const newHeight = parseFloat(e.target.value);
+                        if (selectedFurnitureId) {
+                          const newSize = [...selectedFurniture.size];
+                          newSize[1] = newHeight;
+                          updateSelectedFurniture("size", newSize);
+                        } else {
+                          setFurnitureHeight(newHeight);
+                        }
+                      }}
                     />
                   </div>
                 </div>
@@ -425,10 +468,17 @@ const CustomerDashboard = () => {
                       min="0"
                       max="20"
                       step="0.1"
-                      value={furnitureLength}
-                      onChange={(e) =>
-                        setFurnitureLength(parseFloat(e.target.value))
-                      }
+                      value={selectedFurniture?.size[2] || furnitureLength}
+                      onChange={(e) => {
+                        const newLength = parseFloat(e.target.value);
+                        if (selectedFurnitureId) {
+                          const newSize = [...selectedFurniture.size];
+                          newSize[2] = newLength;
+                          updateSelectedFurniture("size", newSize);
+                        } else {
+                          setFurnitureLength(newLength);
+                        }
+                      }}
                     />
                   </div>
                 </div>

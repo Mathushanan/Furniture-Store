@@ -1,30 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box } from "@react-three/drei";
 import MoveHandle from "./MoveHandle";
 
 const Furniture = ({
+  id,
   position,
   color = "orange",
   size = [1, 1, 1],
   onDragging,
+  isSelected,
+  onClick,
+  onPositionChange,
+  viewMode,
 }) => {
   const [dragging, setDragging] = useState(false);
-  const [pos, setPos] = useState([position[0], size[1] / 2, position[2]]);
-  const [selected, setSelected] = useState(false);
+  const is2D = viewMode === "2D";
+  const adjustedSize = is2D ? [size[0], 0.01, size[2]] : size;
+  const [pos, setPos] = useState([
+    position[0],
+    is2D ? 0.05 : size[1] / 2,
+    position[2],
+  ]);
 
   const roomHalf = 5;
+
+  useEffect(() => {
+    setPos([position[0], is2D ? 0.05 : size[1] / 2, position[2]]);
+  }, [position, size, is2D]);
 
   const onPointerDown = (e) => {
     e.stopPropagation();
     setDragging(true);
-    setSelected(true);
     onDragging(true);
+    onClick?.();
   };
 
   const onPointerUp = (e) => {
     e.stopPropagation();
     setDragging(false);
     onDragging(false);
+    onPositionChange?.(pos);
   };
 
   const onPointerMove = (e) => {
@@ -37,8 +52,9 @@ const Furniture = ({
         -roomHalf + size[2] / 2,
         Math.min(roomHalf - size[2] / 2, e.point.z)
       );
-      // Maintain bottom-anchored position
-      setPos([newX, size[1] / 2, newZ]);
+      const newPos = [newX, is2D ? 0 : size[1] / 2, newZ];
+      setPos(newPos);
+      onPositionChange?.(newPos);
     }
   };
 
@@ -52,12 +68,12 @@ const Furniture = ({
         const max = roomHalf - half;
         const min = -roomHalf + half;
         newPos[index] = Math.max(min, Math.min(max, newPos[index] + delta));
-      } else if (axis === "y") {
-        // Grow upward only: base stays at y = 0, so center is at half the height
+      } else if (axis === "y" && !is2D) {
         const newY = Math.max(size[1] / 2, newPos[1] + delta);
-        newPos[1] = newY < size[1] / 2 ? size[1] / 2 : newY;
+        newPos[1] = newY;
       }
 
+      onPositionChange?.(newPos);
       return newPos;
     });
   };
@@ -65,18 +81,24 @@ const Furniture = ({
   return (
     <group>
       <Box
-        args={size}
+        args={adjustedSize}
         position={pos}
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
         onPointerMove={onPointerMove}
-        castShadow
-        receiveShadow
+        castShadow={!is2D}
+        receiveShadow={!is2D}
       >
         <meshStandardMaterial color={color} />
       </Box>
 
-      {selected && (
+      {isSelected && (
+        <Box args={adjustedSize} position={pos}>
+          <meshBasicMaterial color="yellow" wireframe />
+        </Box>
+      )}
+
+      {isSelected && !is2D && (
         <>
           <MoveHandle
             axis="x"
