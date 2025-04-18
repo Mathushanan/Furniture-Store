@@ -1,32 +1,49 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Box } from "@react-three/drei";
 import MoveHandle from "./MoveHandle";
+import ChairModel from "./ChairModel.jsx";
 
 const Furniture = ({
   id,
   position,
   color = "orange",
-  size = [1, 1, 1],
+  size, // Now optional
   onDragging,
   isSelected,
   onClick,
   onPositionChange,
   viewMode,
 }) => {
+  const modelRef = useRef();
+  const [modelSize, setModelSize] = useState([1, 1, 1]);
+  const [pos, setPos] = useState([0, 0, 0]);
   const [dragging, setDragging] = useState(false);
   const is2D = viewMode === "2D";
-  const adjustedSize = is2D ? [size[0], 0.01, size[2]] : size;
-  const [pos, setPos] = useState([
-    position[0],
-    is2D ? 0.05 : size[1] / 2,
-    position[2],
-  ]);
-
   const roomHalf = 5;
+  const [modelScale, setModelScale] = useState(1);
+
+  // Get bounding box size from model
+  // After fetching model size:
+  useEffect(() => {
+    if (modelRef.current?.getSize) {
+      const sizeFromModel = modelRef.current.getSize();
+      const maxDimension = Math.max(...sizeFromModel);
+      const scaleFactor = 1 / maxDimension; // Normalize size
+
+      // Scale to room size (optional factor like 0.5 for more spacing)
+      const scale = scaleFactor * (roomHalf / 2);
+      const scaledSize = sizeFromModel.map((s) => s * scale);
+
+      setModelSize(scaledSize);
+      setModelScale(scale);
+    }
+  }, []);
+
+  const adjustedSize = is2D ? [modelSize[0], 0.01, modelSize[2]] : modelSize;
 
   useEffect(() => {
-    setPos([position[0], is2D ? 0.05 : size[1] / 2, position[2]]);
-  }, [position, size, is2D]);
+    setPos([position[0], is2D ? 0.05 : modelSize[1] / 2, position[2]]);
+  }, [position, modelSize, is2D]);
 
   const onPointerDown = (e) => {
     e.stopPropagation();
@@ -44,15 +61,16 @@ const Furniture = ({
 
   const onPointerMove = (e) => {
     if (dragging) {
+      const [sx, sy, sz] = modelSize;
       const newX = Math.max(
-        -roomHalf + size[0] / 2,
-        Math.min(roomHalf - size[0] / 2, e.point.x)
+        -roomHalf + sx / 2,
+        Math.min(roomHalf - sx / 2, e.point.x)
       );
       const newZ = Math.max(
-        -roomHalf + size[2] / 2,
-        Math.min(roomHalf - size[2] / 2, e.point.z)
+        -roomHalf + sz / 2,
+        Math.min(roomHalf - sz / 2, e.point.z)
       );
-      const newPos = [newX, is2D ? 0 : size[1] / 2, newZ];
+      const newPos = [newX, is2D ? 0 : sy / 2, newZ];
       setPos(newPos);
       onPositionChange?.(newPos);
     }
@@ -62,15 +80,14 @@ const Furniture = ({
     setPos((prev) => {
       const newPos = [...prev];
       const index = axis === "x" ? 0 : axis === "y" ? 1 : 2;
-      const half = size[index] / 2;
+      const half = modelSize[index] / 2;
 
       if (axis === "x" || axis === "z") {
         const max = roomHalf - half;
         const min = -roomHalf + half;
         newPos[index] = Math.max(min, Math.min(max, newPos[index] + delta));
       } else if (axis === "y" && !is2D) {
-        const newY = Math.max(size[1] / 2, newPos[1] + delta);
-        newPos[1] = newY;
+        newPos[1] = Math.max(modelSize[1] / 2, newPos[1] + delta);
       }
 
       onPositionChange?.(newPos);
@@ -79,21 +96,16 @@ const Furniture = ({
   };
 
   return (
-    <group>
-      <Box
-        args={adjustedSize}
-        position={pos}
-        onPointerDown={onPointerDown}
-        onPointerUp={onPointerUp}
-        onPointerMove={onPointerMove}
-        castShadow={!is2D}
-        receiveShadow={!is2D}
-      >
-        <meshStandardMaterial color={color} />
-      </Box>
+    <group
+      position={pos}
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
+      onPointerMove={onPointerMove}
+    >
+      <ChairModel ref={modelRef} scale={[modelScale, modelScale, modelScale]} />
 
       {isSelected && (
-        <Box args={adjustedSize} position={pos}>
+        <Box args={adjustedSize}>
           <meshBasicMaterial color="yellow" wireframe />
         </Box>
       )}
@@ -102,19 +114,19 @@ const Furniture = ({
         <>
           <MoveHandle
             axis="x"
-            position={[pos[0] + size[0] / 2 + 0.3, pos[1], pos[2]]}
+            position={[modelSize[0] / 2 + 0.3, 0, 0]}
             onMove={handleMove}
             onDraggingChange={onDragging}
           />
           <MoveHandle
             axis="y"
-            position={[pos[0], pos[1] + size[1] / 2 + 0.3, pos[2]]}
+            position={[0, modelSize[1] / 2 + 0.3, 0]}
             onMove={handleMove}
             onDraggingChange={onDragging}
           />
           <MoveHandle
             axis="z"
-            position={[pos[0], pos[1], pos[2] + size[2] / 2 + 0.3]}
+            position={[0, 0, modelSize[2] / 2 + 0.3]}
             onMove={handleMove}
             onDraggingChange={onDragging}
           />

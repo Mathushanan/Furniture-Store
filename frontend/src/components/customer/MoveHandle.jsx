@@ -1,6 +1,4 @@
-// components/MoveHandle.jsx
 import React, { useState } from "react";
-import { Box } from "@react-three/drei";
 
 const MoveHandle = ({ axis, onMove, position, onDraggingChange }) => {
   const [dragging, setDragging] = useState(false);
@@ -27,8 +25,8 @@ const MoveHandle = ({ axis, onMove, position, onDraggingChange }) => {
 
     const moveAmount =
       axis === "x" ? delta.x : axis === "y" ? delta.y : delta.z;
-    onMove(axis, moveAmount);
 
+    onMove(axis, moveAmount); // Ensure onMove properly passes 'y' delta for y-axis
     setStartPoint(e.point);
   };
 
@@ -39,17 +37,49 @@ const MoveHandle = ({ axis, onMove, position, onDraggingChange }) => {
     onDraggingChange?.(false);
   };
 
+  const rotation =
+    axis === "x"
+      ? [0, 0, -Math.PI / 2]
+      : axis === "z"
+      ? [Math.PI / 2, 0, 0]
+      : [0, 0, 0]; // y-axis
+
+  // Offset the handle from the furniture by 0.8 units in the direction of the axis
+  const offset = {
+    x: axis === "x" ? 0.2 : 0,
+    y: axis === "y" ? 0.2 : 0,
+    z: axis === "z" ? 0.2 : 0,
+  };
+
+  const handlePosition = [
+    position[0] + offset.x,
+    position[1] + offset.y,
+    position[2] + offset.z,
+  ];
+
   return (
-    <Box
-      args={[0.2, 0.2, 0.2]}
-      position={position}
-      onPointerDown={handlePointerDown}
-      onPointerMove={handlePointerMove}
-      onPointerUp={handlePointerUp}
-      cursor="pointer"
-    >
-      <meshStandardMaterial color={color} />
-    </Box>
+    <group position={handlePosition} rotation={rotation}>
+      {/* Arrow Shaft */}
+      <mesh
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+      >
+        <cylinderGeometry args={[0.05, 0.05, 0.6, 8]} />
+        <meshStandardMaterial color={color} />
+      </mesh>
+
+      {/* Arrow Head */}
+      <mesh
+        position={[0, 0.4, 0]}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+      >
+        <coneGeometry args={[0.1, 0.2, 8]} />
+        <meshStandardMaterial color={color} />
+      </mesh>
+    </group>
   );
 };
 
