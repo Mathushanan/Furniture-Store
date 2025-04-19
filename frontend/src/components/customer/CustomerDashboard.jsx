@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import wall_icon from "../../assets/wall_icon.png"; // Adjust the path as necessary
 import chair from "../../assets/chair_vector.jpg"; // Adjust the path as necessary
 import table from "../../assets/table_vector.jpg"; // Adjust the path as necessary
@@ -15,9 +15,9 @@ const CustomerDashboard = () => {
   const [wallHeight, setWallHeight] = useState(3);
   const [wallThickness, setWallThickness] = useState(0.2);
   const [furnitureColor, setFurnitureColor] = useState("#ff0000");
-  const [furnitureWidth, setFurnitureWidth] = useState(2);
+  const [furnitureWidth, setFurnitureWidth] = useState(1);
   const [furnitureHeight, setFurnitureHeight] = useState(1);
-  const [furnitureLength, setFurnitureLength] = useState(2);
+  const [furnitureLength, setFurnitureLength] = useState(1);
   const [isDraggingFurniture, setIsDraggingFurniture] = useState(false);
   const [roomSize, setRoomSize] = useState(10);
   const [furnitureList, setFurnitureList] = useState([]);
@@ -369,9 +369,9 @@ const CustomerDashboard = () => {
                       type="range"
                       className="thin-slider p-0 m-0"
                       style={{ marginTop: "0px" }}
-                      min="0"
-                      max="20"
-                      step="0.1"
+                      min="1"
+                      max="2"
+                      step="0.01"
                       value={selectedFurniture?.size[0] || furnitureWidth}
                       onChange={(e) => {
                         const newWidth = parseFloat(e.target.value);
@@ -393,7 +393,7 @@ const CustomerDashboard = () => {
                     className="form-control form-control-sm"
                     placeholder="9'2&quot;"
                     style={{ fontSize: "12px" }}
-                    value={furnitureWidth}
+                    value={selectedFurniture?.size[0] ?? furnitureWidth}
                     onChange={(e) =>
                       setFurnitureWidth(parseFloat(e.target.value))
                     }
@@ -418,8 +418,8 @@ const CustomerDashboard = () => {
                       className="thin-slider p-0 m-0"
                       style={{ marginTop: "0px" }}
                       min="0"
-                      max="20"
-                      step="0.1"
+                      max="1"
+                      step="0.001"
                       value={selectedFurniture?.size[1] || furnitureHeight}
                       onChange={(e) => {
                         const newHeight = parseFloat(e.target.value);
@@ -441,7 +441,7 @@ const CustomerDashboard = () => {
                     className="form-control form-control-sm"
                     placeholder="9'2&quot;"
                     style={{ fontSize: "12px" }}
-                    value={furnitureHeight}
+                    value={selectedFurniture?.size[1] ?? furnitureHeight}
                     onChange={(e) =>
                       setFurnitureHeight(parseFloat(e.target.value))
                     }
@@ -466,8 +466,8 @@ const CustomerDashboard = () => {
                       className="thin-slider p-0 m-0"
                       style={{ marginTop: "0px" }}
                       min="0"
-                      max="20"
-                      step="0.1"
+                      max="1"
+                      step="0.01"
                       value={selectedFurniture?.size[2] || furnitureLength}
                       onChange={(e) => {
                         const newLength = parseFloat(e.target.value);
@@ -489,7 +489,7 @@ const CustomerDashboard = () => {
                     className="form-control form-control-sm"
                     placeholder="9'2&quot;"
                     style={{ fontSize: "12px" }}
-                    value={furnitureLength}
+                    value={selectedFurniture?.size[2] ?? furnitureLength}
                     onChange={(e) =>
                       setFurnitureLength(parseFloat(e.target.value))
                     }

@@ -7,7 +7,7 @@ const Furniture = ({
   id,
   position,
   color = "orange",
-  size, // Now optional
+  size,
   onDragging,
   isSelected,
   onClick,
@@ -42,7 +42,8 @@ const Furniture = ({
   const adjustedSize = is2D ? [modelSize[0], 0.01, modelSize[2]] : modelSize;
 
   useEffect(() => {
-    setPos([position[0], is2D ? 0.05 : modelSize[1] / 2, position[2]]);
+    const yPos = is2D ? 0.05 : 0;
+    setPos([position[0], yPos, position[2]]);
   }, [position, modelSize, is2D]);
 
   const onPointerDown = (e) => {
@@ -102,7 +103,12 @@ const Furniture = ({
       onPointerUp={onPointerUp}
       onPointerMove={onPointerMove}
     >
-      <ChairModel ref={modelRef} scale={[modelScale, modelScale, modelScale]} />
+      <ChairModel
+        ref={modelRef}
+        color={color} // Pass color dynamically
+        size={size} // Pass size dynamically
+        scale={[modelScale, modelScale, modelScale]}
+      />
 
       {isSelected && (
         <Box args={adjustedSize}>
