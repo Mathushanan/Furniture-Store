@@ -1,13 +1,20 @@
 import React, { useRef } from "react";
 import wall_icon from "../../assets/wall_icon.png"; // Adjust the path as necessary
-import chair from "../../assets/chair_vector.jpg"; // Adjust the path as necessary
-import table from "../../assets/table_vector.jpg"; // Adjust the path as necessary
-import sofa from "../../assets/sofa_vector.jpg"; // Adjust the path as necessary
-import bed from "../../assets/bed_vector.jpg"; // Adjust the path as necessary
-import cupboard from "../../assets/cupboard_vector.jpg"; // Adjust the path as necessary
+import chair1 from "../../assets/chair01.png"; // Adjust the path as necessary
+import chair2 from "../../assets/chair02.png"; // Adjust the path as necessary
+import table1 from "../../assets/table01.png"; // Adjust the path as necessary
+import table3 from "../../assets/table03.png"; // Adjust the path as necessary
+import sofa1 from "../../assets/sofa01.png"; // Adjust the path as necessary
+import sofa2 from "../../assets/sofa02.png"; // Adjust the path as necessary
+import bed1 from "../../assets/bed01.png"; // Adjust the path as necessary
+import bed2 from "../../assets/bed02.png"; // Adjust the path as necessary
+import closet1 from "../../assets/closet01.png"; // Adjust the path as necessary
+import closet2 from "../../assets/closet02.png"; // Adjust the path as necessary
 import { useState } from "react";
 import { HiOutlineSwitchHorizontal } from "react-icons/hi";
 import RoomScene from "./RoomScene.jsx";
+import floor_icon from "../../assets/floor_icon.png"; // Adjust the path as necessary
+import Sidebar from "./SideBar.jsx";
 
 const CustomerDashboard = () => {
   const [viewMode, setViewMode] = useState("3D");
@@ -22,6 +29,8 @@ const CustomerDashboard = () => {
   const [roomSize, setRoomSize] = useState(10);
   const [furnitureList, setFurnitureList] = useState([]);
   const [selectedFurnitureId, setSelectedFurnitureId] = useState(null);
+  const [selectedWall, setSelectedWall] = useState(null); // Wall selection state moved to parent
+  const [selectedFloor, setSelectedFloor] = useState(null); // Floor selection state moved to parent
 
   const toggleView = () => {
     setViewMode((prev) => (prev === "3D" ? "2D" : "3D"));
@@ -36,11 +45,6 @@ const CustomerDashboard = () => {
       prevList.map((f) =>
         f.id === selectedFurnitureId ? { ...f, [key]: value } : f
       )
-    );
-  };
-  const updateFurniturePosition = (id, newPosition) => {
-    setFurnitureList((prev) =>
-      prev.map((f) => (f.id === id ? { ...f, position: newPosition } : f))
     );
   };
 
@@ -61,75 +65,69 @@ const CustomerDashboard = () => {
       <div className="row vh-100">
         {/* Left Sidebar */}
         <div className="col-2 bg-white p-3 overflow-auto rounded shadow-lg">
-          <h5 className="mb-3 fw-bold">Create Room</h5>
+          <Sidebar
+            selectedWall={selectedWall} // Pass selectedWall as prop to Sidebar
+            setSelectedWall={setSelectedWall} // Pass setSelectedWall function to Sidebar
+            selectedFloor={selectedFloor} // Pass selectedFloor as prop to Sidebar
+            setSelectedFloor={setSelectedFloor} // Pass setSelectedFloor function to Sidebar
+          />
 
-          {/* Section 1: Top Options */}
-          <div className="mb-4">
-            <div className="d-grid gap-2 mb-2 ">
-              <button className="btn bg-white text-start w-100 py-2 select-wall-button border">
-                <div className="d-flex justify-content-between align-items-center w-100">
-                  <div>
-                    Select
-                    <small className="text-muted d-block">Wall Styles</small>
-                  </div>
-                  <div className="ms-2">
-                    <img
-                      src={wall_icon}
-                      alt="Wall Icon"
-                      style={{ width: "40px", height: "40px" }}
-                    />
-                  </div>
-                </div>
-              </button>
-            </div>
-          </div>
-
-          {/* Section 2: Draw Walls */}
           <div className="mb-4">
             <h6 className="fw-semibold">Select Furnitures</h6>
-            <div className="d-flex flex-wrap gap-1">
-              {/* chair 01 */}
-              <div
-                className="border p-2 rounded text-center"
-                style={{ width: "100px" }}
-                draggable
-                onDragStart={(e) => {
-                  e.dataTransfer.setData("furniture-type", "chair");
-                }}
-              >
-                <div>
-                  <img src={chair} alt="Chair" style={{ width: "75px" }} />
-                </div>
-                <small className="text-secondary">Chair</small>
-                <span
-                  className="badge bg-success ms-1"
-                  style={{ fontSize: "9px" }}
-                >
-                  NEW
-                </span>
-              </div>
 
-              {/* chair 02 */}
-              <div
-                className="border p-2 rounded text-center"
-                style={{ width: "100px" }}
-              >
-                <div>
-                  <img
-                    src={chair}
-                    alt=""
-                    className=""
-                    style={{ width: "75px" }}
-                  />
-                </div>
-                <small className="text-secondary ">Chair</small>
-                <span
-                  className="badge bg-success ms-1"
-                  style={{ fontSize: "9px" }}
+            <div
+              className="d-grid gap-2"
+              style={{
+                gridTemplateColumns: "repeat(2, 1fr)",
+                display: "grid",
+                maxWidth: "220px",
+              }}
+            >
+              {[
+                { id: "chair1", label: "Chair", img: chair1 },
+                { id: "chair2", label: "Chair", img: chair2 },
+                { id: "table1", label: "Table", img: table1 },
+                { id: "table2", label: "Table", img: table3 },
+                { id: "sofa1", label: "Sofa", img: sofa1 },
+                { id: "sofa2", label: "Sofa", img: sofa2 },
+                { id: "bed1", label: "Bed", img: bed1 },
+                { id: "bed2", label: "Bed", img: bed2 },
+                { id: "cupboard1", label: "Closet", img: closet1 },
+                { id: "cupboard2", label: "Closet", img: closet2 },
+              ].map((item) => (
+                <div
+                  key={item.id}
+                  className="border p-2 rounded text-center d-flex flex-column align-items-center justify-content-between"
+                  style={{
+                    width: "100px",
+                    height: "110px",
+                    boxSizing: "border-box",
+                  }}
+                  draggable
+                  onDragStart={(e) =>
+                    e.dataTransfer.setData("furniture-type", item.id)
+                  }
                 >
-                  NEW
-                </span>
-              </div>
+                  <img
+                    src={item.img}
+                    alt={item.label}
+                    style={{
+                      width: "75px",
+                      height: "75px",
+                      objectFit: "contain",
+                    }}
+                  />
+                  <div>
+                    <small className="text-secondary">{item.label}</small>
+                    <span
+                      className="badge bg-success ms-1"
+                      style={{ fontSize: "9px" }}
+                    >
+                      NEW
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -141,10 +139,11 @@ const CustomerDashboard = () => {
             onDragOver={(e) => e.preventDefault()}
             onDrop={(e) => {
               const type = e.dataTransfer.getData("furniture-type");
+
               if (type) {
                 const newFurniture = {
                   id: Date.now(),
-                  type,
+                  type: type,
                   position: [0, furnitureHeight / 2 + 0.1, 0],
                   size: [furnitureWidth, furnitureHeight, furnitureLength],
                   color: furnitureColor,
@@ -169,6 +168,8 @@ const CustomerDashboard = () => {
               setSelectedFurnitureId={setSelectedFurnitureId}
               setFurnitureList={setFurnitureList}
               viewMode={viewMode}
+              selectedFloor={selectedFloor}
+              selectedWall={selectedWall}
             />
           </div>
         </div>

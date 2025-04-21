@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box } from "@react-three/drei";
 import MoveHandle from "./MoveHandle";
-import ChairModel from "./ChairModel.jsx";
+import Model from "./Model.jsx";
 
 const Furniture = ({
   id,
@@ -13,6 +13,7 @@ const Furniture = ({
   onClick,
   onPositionChange,
   viewMode,
+  type,
 }) => {
   const modelRef = useRef();
   const [modelSize, setModelSize] = useState([1, 1, 1]);
@@ -28,6 +29,10 @@ const Furniture = ({
     const yPos = is2D ? 0.05 : 0;
     setPos([position[0], yPos, position[2]]);
   }, [position, modelSize, is2D]);
+
+  useEffect(() => {
+    console.log(type, "type");
+  }, []);
 
   const onPointerDown = (e) => {
     e.stopPropagation();
@@ -86,10 +91,11 @@ const Furniture = ({
       onPointerUp={onPointerUp}
       onPointerMove={onPointerMove}
     >
-      <ChairModel
+      <Model
         ref={modelRef}
         color={color} // Pass color dynamically
         size={size}
+        type={type}
       />
 
       {isSelected && (
