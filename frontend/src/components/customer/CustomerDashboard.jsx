@@ -371,7 +371,7 @@ const CustomerDashboard = () => {
                       style={{ marginTop: "0px" }}
                       min="1"
                       max="2"
-                      step="0.01"
+                      step="0.1"
                       value={selectedFurniture?.size[0] || furnitureWidth}
                       onChange={(e) => {
                         const newWidth = parseFloat(e.target.value);
@@ -417,9 +417,9 @@ const CustomerDashboard = () => {
                       type="range"
                       className="thin-slider p-0 m-0"
                       style={{ marginTop: "0px" }}
-                      min="0"
-                      max="1"
-                      step="0.001"
+                      min="1"
+                      max="2"
+                      step="0.1"
                       value={selectedFurniture?.size[1] || furnitureHeight}
                       onChange={(e) => {
                         const newHeight = parseFloat(e.target.value);
@@ -465,9 +465,9 @@ const CustomerDashboard = () => {
                       type="range"
                       className="thin-slider p-0 m-0"
                       style={{ marginTop: "0px" }}
-                      min="0"
-                      max="1"
-                      step="0.01"
+                      min="1"
+                      max="2"
+                      step="0.1"
                       value={selectedFurniture?.size[2] || furnitureLength}
                       onChange={(e) => {
                         const newLength = parseFloat(e.target.value);

@@ -22,23 +22,6 @@ const Furniture = ({
   const roomHalf = 5;
   const [modelScale, setModelScale] = useState(1);
 
-  // Get bounding box size from model
-  // After fetching model size:
-  useEffect(() => {
-    if (modelRef.current?.getSize) {
-      const sizeFromModel = modelRef.current.getSize();
-      const maxDimension = Math.max(...sizeFromModel);
-      const scaleFactor = 1 / maxDimension; // Normalize size
-
-      // Scale to room size (optional factor like 0.5 for more spacing)
-      const scale = scaleFactor * (roomHalf / 2);
-      const scaledSize = sizeFromModel.map((s) => s * scale);
-
-      setModelSize(scaledSize);
-      setModelScale(scale);
-    }
-  }, []);
-
   const adjustedSize = is2D ? [modelSize[0], 0.01, modelSize[2]] : modelSize;
 
   useEffect(() => {
@@ -106,8 +89,7 @@ const Furniture = ({
       <ChairModel
         ref={modelRef}
         color={color} // Pass color dynamically
-        size={size} // Pass size dynamically
-        scale={[modelScale, modelScale, modelScale]}
+        size={size}
       />
 
       {isSelected && (

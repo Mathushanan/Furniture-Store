@@ -1,13 +1,9 @@
-import React, {
-  useRef,
-  useEffect,
-  forwardRef,
-  useImperativeHandle,
-} from "react";
+import React, { useRef, useEffect, forwardRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
 const ChairModel = forwardRef((props, ref) => {
+  const { color, size = [1, 1, 1] } = props;
   const { scene } = useGLTF("/assets/chair.glb");
   const modelRef = useRef();
 
@@ -19,56 +15,31 @@ const ChairModel = forwardRef((props, ref) => {
     if (clonedScene) {
       clonedScene.traverse((child) => {
         if (child.isMesh) {
-          child.material = new THREE.MeshStandardMaterial({
-            color: props.color,
-          });
+          child.material = new THREE.MeshStandardMaterial({ color });
         }
       });
     }
-  }, [clonedScene, props.color]);
+  }, [clonedScene, color]);
 
-  // Adjust pivot (center and place on ground)
   useEffect(() => {
-    if (!modelRef.current) return;
+    if (!clonedScene) return;
 
-    const box = new THREE.Box3().setFromObject(modelRef.current);
-    const center = new THREE.Vector3();
-    const size = new THREE.Vector3();
-    box.getCenter(center);
-    box.getSize(size);
+    const box = new THREE.Box3().setFromObject(clonedScene);
+    const originalSize = new THREE.Vector3();
+    box.getSize(originalSize);
 
-    modelRef.current.position.x -= center.x;
-    modelRef.current.position.z -= center.z;
-    modelRef.current.position.y -= box.min.y;
-  }, []);
+    const [targetX, targetY, targetZ] = size;
 
-  // Apply scaling from props.size
-  useEffect(() => {
-    if (!modelRef.current || !props.size) return;
+    const scaleX = targetX / originalSize.x;
+    const scaleY = targetY / originalSize.y;
+    const scaleZ = targetZ / originalSize.z;
 
-    const box = new THREE.Box3().setFromObject(modelRef.current);
-    const currentSize = new THREE.Vector3();
-    box.getSize(currentSize);
+    clonedScene.scale.set(scaleX, scaleY, scaleZ);
 
-    const [targetX, targetY, targetZ] = props.size;
-
-    const scaleX = targetX / currentSize.x;
-    const scaleY = targetY / currentSize.y;
-    const scaleZ = targetZ / currentSize.z;
-
-    modelRef.current.scale.set(scaleX, scaleY, scaleZ);
-    console.log(currentSize);
-  }, [props.size]);
-
-  // Expose getSize to parent
-  useImperativeHandle(ref, () => ({
-    getSize: () => {
-      const box = new THREE.Box3().setFromObject(modelRef.current);
-      const size = new THREE.Vector3();
-      box.getSize(size);
-      return [size.x, size.y, size.z];
-    },
-  }));
+    console.log("Original size:", originalSize);
+    console.log("Target size:", size);
+    console.log("Applied scale:", clonedScene.scale);
+  }, [clonedScene, size]);
 
   return <primitive ref={modelRef} object={clonedScene} {...props} />;
 });
