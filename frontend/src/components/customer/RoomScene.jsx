@@ -9,6 +9,13 @@ import carpet_floor from "../../assets/carpet_floor.jpg";
 import tile_floor from "../../assets/tile_floor.jpg";
 import granite_floor from "../../assets/granite_floor.jpg";
 
+import smooth_finish_wall from "../../assets/smoothfinish_wall.jpeg";
+import knockdown_wall from "../../assets/knowckdown_wall.jpg";
+import orange_peel_wall from "../../assets/orangepeel_wall.jpeg";
+import popcorn_wall from "../../assets/popcorn_wall.jpeg";
+import sand_swirl_wall from "../../assets/sand_wall.jpg";
+import sand_stone_wall from "../../assets/sandstone_wall.jpg";
+
 const CameraUpdater = ({ is2D, roomSize }) => {
   const { camera } = useThree();
 
@@ -91,6 +98,67 @@ const RoomScene = ({
     );
   };
 
+  const Wall = ({
+    roomSize,
+    wallHeight,
+    wallThickness,
+    wallColor,
+    selectedWall,
+  }) => {
+    // Load both textures unconditionally
+    const smoothFinishTexture = useTexture(smooth_finish_wall);
+    const knockdownTexture = useTexture(knockdown_wall);
+    const orangePeelTexture = useTexture(orange_peel_wall);
+    const popcornTexture = useTexture(popcorn_wall);
+    const sandSwirlTexture = useTexture(sand_swirl_wall);
+    const sandStoneTexture = useTexture(sand_stone_wall);
+
+    // Decide which one to use
+    const texture =
+      selectedWall === "Smooth Finish Wall"
+        ? smoothFinishTexture
+        : selectedWall === "Knockdown Wall"
+        ? knockdownTexture
+        : selectedWall === "Orange Peel Wall"
+        ? orangePeelTexture
+        : selectedWall === "Popcorn Wall"
+        ? popcornTexture
+        : selectedWall === "Sand Swirl Wall"
+        ? sandSwirlTexture
+        : selectedWall === "Sand Stone Wall"
+        ? sandStoneTexture
+        : null;
+
+    return (
+      <>
+        <Box
+          args={[roomSize, wallHeight, wallThickness]}
+          position={[0, wallHeight / 2, -roomSize / 2]}
+        >
+          <meshStandardMaterial map={texture} />
+        </Box>
+        <Box
+          args={[roomSize, wallHeight, wallThickness]}
+          position={[0, wallHeight / 2, roomSize / 2]}
+        >
+          <meshStandardMaterial map={texture} />
+        </Box>
+        <Box
+          args={[wallThickness, wallHeight, roomSize]}
+          position={[-roomSize / 2, wallHeight / 2, 0]}
+        >
+          <meshStandardMaterial map={texture} />
+        </Box>
+        <Box
+          args={[wallThickness, wallHeight, roomSize]}
+          position={[roomSize / 2, wallHeight / 2, 0]}
+        >
+          <meshStandardMaterial map={texture} />
+        </Box>
+      </>
+    );
+  };
+
   return (
     <Canvas
       shadows={!is2D}
@@ -114,7 +182,16 @@ const RoomScene = ({
       <Floor roomSize={roomSize} is2D={is2D} selectedFloor={selectedFloor} />
 
       {/* Walls */}
-      {!is2D && (
+      {!is2D && selectedWall != "Custom Color" && (
+        <Wall
+          wallColor={wallColor}
+          wallHeight={wallHeight}
+          wallThickness={wallThickness}
+          roomSize={roomSize}
+          selectedWall={selectedWall}
+        />
+      )}
+      {!is2D && selectedWall == "Custom Color" && (
         <>
           <Box
             args={[roomSize, wallHeight, wallThickness]}

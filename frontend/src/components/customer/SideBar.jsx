@@ -7,9 +7,22 @@ import granite_icon from "../../assets/granite_floor.jpg";
 import carpet_icon from "../../assets/carpet_floor.jpg";
 import tile_icon from "../../assets/tile_floor.jpg";
 
+import smooth_finish_wall from "../../assets/smoothfinish_wall.jpeg";
+import knockdown_wall from "../../assets/knowckdown_wall.jpg";
+import orange_peel_wall from "../../assets/orangepeel_wall.jpeg";
+import popcorn_wall from "../../assets/popcorn_wall.jpeg";
+import sand_swirl_wall from "../../assets/sand_wall.jpg";
+import sand_stone_wall from "../../assets/sandstone_wall.jpg";
+import custom_color_wall from "../../assets/custom_color.png";
+
 const wallOptions = [
-  { name: "Brick Wall", image: wall_icon },
-  { name: "Painted Wall", image: wall_icon },
+  { name: "Custom Color", image: custom_color_wall },
+  { name: "Smooth Finish Wall", image: smooth_finish_wall },
+  { name: "Knockdown Wall", image: knockdown_wall },
+  { name: "Orange Peel Wall", image: orange_peel_wall },
+  { name: "Popcorn Wall", image: popcorn_wall },
+  { name: "Sand Swirl Wall", image: sand_swirl_wall },
+  { name: "Sand Stone Wall", image: sand_stone_wall },
 ];
 
 const floorOptions = [
@@ -26,8 +39,8 @@ const Sidebar = ({
   selectedFloor,
   setSelectedFloor,
 }) => {
-  const [showWallOptions, setShowWallOptions] = useState(true); // Track visibility of wall options
-  const [showFloorOptions, setShowFloorOptions] = useState(true); // Track visibility of floor options
+  const [showWallOptions, setShowWallOptions] = useState(false); // Track visibility of wall options
+  const [showFloorOptions, setShowFloorOptions] = useState(false); // Track visibility of floor options
 
   // Function to handle wall selection and hide options
   const handleWallSelect = (wall) => {

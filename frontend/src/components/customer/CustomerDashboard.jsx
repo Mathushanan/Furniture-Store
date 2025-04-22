@@ -29,8 +29,8 @@ const CustomerDashboard = () => {
   const [roomSize, setRoomSize] = useState(10);
   const [furnitureList, setFurnitureList] = useState([]);
   const [selectedFurnitureId, setSelectedFurnitureId] = useState(null);
-  const [selectedWall, setSelectedWall] = useState(null); // Wall selection state moved to parent
-  const [selectedFloor, setSelectedFloor] = useState(null); // Floor selection state moved to parent
+  const [selectedWall, setSelectedWall] = useState("Sand Stone Wall"); // Wall selection state moved to parent
+  const [selectedFloor, setSelectedFloor] = useState("Tile Floor"); // Floor selection state moved to parent
 
   const toggleView = () => {
     setViewMode((prev) => (prev === "3D" ? "2D" : "3D"));
@@ -133,7 +133,10 @@ const CustomerDashboard = () => {
         </div>
 
         {/* Middle Content */}
-        <div className="col-8 p-3 d-flex justify-content-center align-items-center">
+        <div
+          className="col-8 p-3 d-flex justify-content-center align-items-center"
+          style={{ overflow: "hidden", height: "100vh" }}
+        >
           <div
             className="rounded w-100 h-100"
             onDragOver={(e) => e.preventDefault()}
