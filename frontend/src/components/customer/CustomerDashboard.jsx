@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import wall_icon from "../../assets/wall_icon.png"; // Adjust the path as necessary
 import chair1 from "../../assets/chair01.png"; // Adjust the path as necessary
 import chair2 from "../../assets/chair02.png"; // Adjust the path as necessary
@@ -15,6 +15,7 @@ import { HiOutlineSwitchHorizontal } from "react-icons/hi";
 import RoomScene from "./RoomScene.jsx";
 import floor_icon from "../../assets/floor_icon.png"; // Adjust the path as necessary
 import Sidebar from "./SideBar.jsx";
+import { Shadow } from "@react-three/drei";
 
 const CustomerDashboard = () => {
   const [viewMode, setViewMode] = useState("3D");
@@ -25,12 +26,18 @@ const CustomerDashboard = () => {
   const [furnitureWidth, setFurnitureWidth] = useState(1);
   const [furnitureHeight, setFurnitureHeight] = useState(1);
   const [furnitureLength, setFurnitureLength] = useState(1);
+  const [furnitureShade, setFurnitureShade] = useState(1);
   const [isDraggingFurniture, setIsDraggingFurniture] = useState(false);
   const [roomSize, setRoomSize] = useState(10);
   const [furnitureList, setFurnitureList] = useState([]);
   const [selectedFurnitureId, setSelectedFurnitureId] = useState(null);
   const [selectedWall, setSelectedWall] = useState("Sand Stone Wall"); // Wall selection state moved to parent
   const [selectedFloor, setSelectedFloor] = useState("Tile Floor"); // Floor selection state moved to parent
+  const [furnitureShadow, setFurnitureShadow] = useState(false);
+
+  const removeFurniture = (id) => {
+    setFurnitureList((prevList) => prevList.filter((f) => f.id !== id));
+  };
 
   const toggleView = () => {
     setViewMode((prev) => (prev === "3D" ? "2D" : "3D"));
@@ -46,6 +53,10 @@ const CustomerDashboard = () => {
         f.id === selectedFurnitureId ? { ...f, [key]: value } : f
       )
     );
+  };
+  const toggleShadow = () => {
+    setFurnitureShadow((prev) => !prev); // Toggle shadow state
+    console.log(furnitureShadow);
   };
 
   return (
@@ -150,6 +161,8 @@ const CustomerDashboard = () => {
                   position: [0, furnitureHeight / 2 + 0.1, 0],
                   size: [furnitureWidth, furnitureHeight, furnitureLength],
                   color: furnitureColor,
+                  shade: furnitureShade,
+                  shadow: furnitureShadow,
                 };
                 setFurnitureList((prev) => [...prev, newFurniture]);
               }
@@ -356,6 +369,78 @@ const CustomerDashboard = () => {
                   />
                 </div>
               </div>
+              <div className="form-group row align-items-center mb-2">
+                <label
+                  className="col-sm-6 col-form-label small text-secondary"
+                  style={{ fontSize: "12px" }}
+                >
+                  Shadow
+                </label>
+                <div className="col-sm-6 mt-2">
+                  <button
+                    type="button"
+                    className={`btn ${
+                      furnitureShadow ? "btn-danger" : "btn-success"
+                    }`}
+                    style={{ fontSize: "12px", width: "100%" }}
+                    onClick={() => {
+                      toggleShadow(); // Toggle shadow state
+                      if (selectedFurnitureId) {
+                        updateSelectedFurniture("shadow", !furnitureShadow); // Update shadow state for selected furniture
+                      } else {
+                        setFurnitureShadow(!furnitureShadow); // Set shadow state for general furniture
+                      }
+                    }}
+                  >
+                    {furnitureShadow ? "Turn Off Shadow" : "Turn On Shadow"}
+                  </button>
+                </div>
+              </div>
+              <div className="form-group row align-items-center mb-2 ">
+                <div className="col-sm-6  ">
+                  <label
+                    className=" small text-secondary "
+                    style={{
+                      fontSize: "12px",
+                      marginBottom: 0,
+                      display: "block",
+                    }}
+                  >
+                    Shades
+                  </label>
+                  <div className="">
+                    <input
+                      type="range"
+                      className="thin-slider p-0 m-0"
+                      style={{ marginTop: "0px" }}
+                      min="1"
+                      max="2"
+                      step="0.1"
+                      value={selectedFurniture?.shade || furnitureShade}
+                      onChange={(e) => {
+                        if (selectedFurnitureId) {
+                          updateSelectedFurniture("shade", e.target.value);
+                        } else {
+                          setFurnitureShade(e.target.value);
+                        }
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="col-sm-6 ">
+                  <input
+                    type="number"
+                    className="form-control form-control-sm"
+                    placeholder="9'2&quot;"
+                    style={{ fontSize: "12px" }}
+                    value={selectedFurniture?.shade ?? furnitureShade}
+                    onChange={(e) =>
+                      setFurnitureShade(parseFloat(e.target.value))
+                    }
+                  />
+                </div>
+              </div>
               <div className="form-group row align-items-center mb-2 ">
                 <div className="col-sm-6  ">
                   <label
@@ -498,6 +583,20 @@ const CustomerDashboard = () => {
                       setFurnitureLength(parseFloat(e.target.value))
                     }
                   />
+                </div>
+              </div>
+              <div className="form-group row align-items-center mb-2 ">
+                <div className="col-sm-6  "></div>
+                {/* View and settings */}
+                <div className="bg-white text-center rounded p-3">
+                  {selectedFurnitureId && (
+                    <button
+                      className="btn btn-danger mt-2"
+                      onClick={() => removeFurniture(selectedFurnitureId)}
+                    >
+                      Remove Furniture
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

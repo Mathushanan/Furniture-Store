@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
 const ChairModel = forwardRef((props, ref) => {
-  const { color, size = [1, 1, 1] } = props;
+  const { shadow, shade, color, size = [1, 1, 1] } = props;
   const { scene: chair1 } = useGLTF("/assets/chair_01.glb");
   const { scene: chair2 } = useGLTF("/assets/chair_02.glb");
 
@@ -20,6 +20,19 @@ const ChairModel = forwardRef((props, ref) => {
   const { scene: bed2 } = useGLTF("/assets/bed_02.glb");
   const modelRef = useRef();
 
+  const adjustShade = (hexColor, shade) => {
+    const color = new THREE.Color(hexColor); // Ensure it's a THREE.Color
+    const hsl = {};
+    color.getHSL(hsl);
+
+    // Clamp lightness value between 0 and 1
+    hsl.l = THREE.MathUtils.clamp(hsl.l * shade, 0, 1);
+
+    const adjustedColor = new THREE.Color();
+    adjustedColor.setHSL(hsl.h, hsl.s, hsl.l);
+    return adjustedColor;
+  };
+
   if (props.type === "chair1") {
     // Clone scene so each instance is separate
     const clonedScene = chair1.clone(true);
@@ -28,12 +41,15 @@ const ChairModel = forwardRef((props, ref) => {
     useEffect(() => {
       if (clonedScene) {
         clonedScene.traverse((child) => {
+          child.castShadow = shadow; // Ensure object casts shadows
           if (child.isMesh) {
-            child.material = new THREE.MeshStandardMaterial({ color });
+            child.material = new THREE.MeshStandardMaterial({
+              color: adjustShade(color, shade),
+            });
           }
         });
       }
-    }, [clonedScene, color]);
+    }, [clonedScene, color, shade, shadow]);
 
     useEffect(() => {
       if (!clonedScene) return;
@@ -49,10 +65,6 @@ const ChairModel = forwardRef((props, ref) => {
       const scaleZ = targetZ / originalSize.z;
 
       clonedScene.scale.set(scaleX, scaleY, scaleZ);
-
-      console.log("Original size:", originalSize);
-      console.log("Target size:", size);
-      console.log("Applied scale:", clonedScene.scale);
     }, [clonedScene, size]);
 
     return <primitive ref={modelRef} object={clonedScene} {...props} />;
@@ -66,12 +78,15 @@ const ChairModel = forwardRef((props, ref) => {
     useEffect(() => {
       if (clonedScene) {
         clonedScene.traverse((child) => {
+          child.castShadow = shadow; // Ensure object casts shadows
           if (child.isMesh) {
-            child.material = new THREE.MeshStandardMaterial({ color });
+            child.material = new THREE.MeshStandardMaterial({
+              color: adjustShade(color, shade),
+            });
           }
         });
       }
-    }, [clonedScene, color]);
+    }, [clonedScene, color, shade, shadow]);
 
     useEffect(() => {
       if (!clonedScene) return;
@@ -104,13 +119,15 @@ const ChairModel = forwardRef((props, ref) => {
     useEffect(() => {
       if (clonedScene) {
         clonedScene.traverse((child) => {
+          child.castShadow = shadow; // Ensure object casts shadows
           if (child.isMesh) {
-            child.material = new THREE.MeshStandardMaterial({ color });
+            child.material = new THREE.MeshStandardMaterial({
+              color: adjustShade(color, shade),
+            });
           }
         });
       }
-    }, [clonedScene, color]);
-
+    }, [clonedScene, color, shade, shadow]);
     useEffect(() => {
       if (!clonedScene) return;
 
@@ -142,12 +159,15 @@ const ChairModel = forwardRef((props, ref) => {
     useEffect(() => {
       if (clonedScene) {
         clonedScene.traverse((child) => {
+          child.castShadow = shadow; // Ensure object casts shadows
           if (child.isMesh) {
-            child.material = new THREE.MeshStandardMaterial({ color });
+            child.material = new THREE.MeshStandardMaterial({
+              color: adjustShade(color, shade),
+            });
           }
         });
       }
-    }, [clonedScene, color]);
+    }, [clonedScene, color, shade, shadow]);
 
     useEffect(() => {
       if (!clonedScene) return;
@@ -180,12 +200,15 @@ const ChairModel = forwardRef((props, ref) => {
     useEffect(() => {
       if (clonedScene) {
         clonedScene.traverse((child) => {
+          child.castShadow = shadow; // Ensure object casts shadows
           if (child.isMesh) {
-            child.material = new THREE.MeshStandardMaterial({ color });
+            child.material = new THREE.MeshStandardMaterial({
+              color: adjustShade(color, shade),
+            });
           }
         });
       }
-    }, [clonedScene, color]);
+    }, [clonedScene, color, shade, shadow]);
 
     useEffect(() => {
       if (!clonedScene) return;
@@ -218,12 +241,15 @@ const ChairModel = forwardRef((props, ref) => {
     useEffect(() => {
       if (clonedScene) {
         clonedScene.traverse((child) => {
+          child.castShadow = shadow; // Ensure object casts shadows
           if (child.isMesh) {
-            child.material = new THREE.MeshStandardMaterial({ color });
+            child.material = new THREE.MeshStandardMaterial({
+              color: adjustShade(color, shade),
+            });
           }
         });
       }
-    }, [clonedScene, color]);
+    }, [clonedScene, color, shade, shadow]);
 
     useEffect(() => {
       if (!clonedScene) return;
@@ -256,12 +282,15 @@ const ChairModel = forwardRef((props, ref) => {
     useEffect(() => {
       if (clonedScene) {
         clonedScene.traverse((child) => {
+          child.castShadow = shadow; // Ensure object casts shadows
           if (child.isMesh) {
-            child.material = new THREE.MeshStandardMaterial({ color });
+            child.material = new THREE.MeshStandardMaterial({
+              color: adjustShade(color, shade),
+            });
           }
         });
       }
-    }, [clonedScene, color]);
+    }, [clonedScene, color, shade, shadow]);
 
     useEffect(() => {
       if (!clonedScene) return;
@@ -294,12 +323,15 @@ const ChairModel = forwardRef((props, ref) => {
     useEffect(() => {
       if (clonedScene) {
         clonedScene.traverse((child) => {
+          child.castShadow = shadow; // Ensure object casts shadows
           if (child.isMesh) {
-            child.material = new THREE.MeshStandardMaterial({ color });
+            child.material = new THREE.MeshStandardMaterial({
+              color: adjustShade(color, shade),
+            });
           }
         });
       }
-    }, [clonedScene, color]);
+    }, [clonedScene, color, shade, shadow]);
 
     useEffect(() => {
       if (!clonedScene) return;
@@ -332,13 +364,15 @@ const ChairModel = forwardRef((props, ref) => {
     useEffect(() => {
       if (clonedScene) {
         clonedScene.traverse((child) => {
+          child.castShadow = shadow; // Ensure object casts shadows
           if (child.isMesh) {
-            child.material = new THREE.MeshStandardMaterial({ color });
+            child.material = new THREE.MeshStandardMaterial({
+              color: adjustShade(color, shade),
+            });
           }
         });
       }
-    }, [clonedScene, color]);
-
+    }, [clonedScene, color, shade, shadow]);
     useEffect(() => {
       if (!clonedScene) return;
 
@@ -370,13 +404,15 @@ const ChairModel = forwardRef((props, ref) => {
     useEffect(() => {
       if (clonedScene) {
         clonedScene.traverse((child) => {
+          child.castShadow = shadow; // Ensure object casts shadows
           if (child.isMesh) {
-            child.material = new THREE.MeshStandardMaterial({ color });
+            child.material = new THREE.MeshStandardMaterial({
+              color: adjustShade(color, shade),
+            });
           }
         });
       }
-    }, [clonedScene, color]);
-
+    }, [clonedScene, color, shade, shadow]);
     useEffect(() => {
       if (!clonedScene) return;
 
@@ -391,10 +427,6 @@ const ChairModel = forwardRef((props, ref) => {
       const scaleZ = targetZ / originalSize.z;
 
       clonedScene.scale.set(scaleX, scaleY, scaleZ);
-
-      console.log("Original size:", originalSize);
-      console.log("Target size:", size);
-      console.log("Applied scale:", clonedScene.scale);
     }, [clonedScene, size]);
 
     return <primitive ref={modelRef} object={clonedScene} {...props} />;

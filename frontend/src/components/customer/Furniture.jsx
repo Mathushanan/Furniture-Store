@@ -14,6 +14,8 @@ const Furniture = ({
   onPositionChange,
   viewMode,
   type,
+  shade,
+  shadow,
 }) => {
   const modelRef = useRef();
   const [modelSize, setModelSize] = useState([1, 1, 1]);
@@ -31,7 +33,7 @@ const Furniture = ({
   }, [position, modelSize, is2D]);
 
   useEffect(() => {
-    console.log(type, "type");
+    console.log(color, "shade");
   }, []);
 
   const onPointerDown = (e) => {
@@ -93,9 +95,11 @@ const Furniture = ({
     >
       <Model
         ref={modelRef}
-        color={color} // Pass color dynamically
+        color={color}
         size={size}
         type={type}
+        shade={shade}
+        shadow={shadow}
       />
 
       {isSelected && (

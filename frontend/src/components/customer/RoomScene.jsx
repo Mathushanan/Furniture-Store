@@ -46,6 +46,8 @@ const RoomScene = ({
   furnitureWidth,
   furnitureHeight,
   furnitureLength,
+  furnitureShade,
+  furnitureShadow,
   isDraggingFurniture,
   setIsDraggingFurniture,
   furnitureList,
@@ -63,6 +65,8 @@ const RoomScene = ({
   };
 
   const is2D = viewMode === "2D";
+
+  // Remove Furniture
 
   const Floor = ({ roomSize, is2D, selectedFloor }) => {
     // Load both textures unconditionally
@@ -160,87 +164,91 @@ const RoomScene = ({
   };
 
   return (
-    <Canvas
-      shadows={!is2D}
-      orthographic={is2D}
-      camera={{
-        position: is2D
-          ? [0, 100, 0]
-          : [roomSize * 0.8, roomSize * 0.6, roomSize * 0.8],
-        zoom: is2D ? 50 : 1,
-        fov: 60,
-        near: 0.1,
-        far: 1000,
-      }}
-    >
-      <CameraUpdater is2D={is2D} roomSize={roomSize} />
+    <>
+      <Canvas
+        shadows={!is2D}
+        orthographic={is2D}
+        camera={{
+          position: is2D
+            ? [0, 100, 0]
+            : [roomSize * 0.8, roomSize * 0.6, roomSize * 0.8],
+          zoom: is2D ? 50 : 1,
+          fov: 60,
+          near: 0.1,
+          far: 1000,
+        }}
+      >
+        <CameraUpdater is2D={is2D} roomSize={roomSize} />
 
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[5, 10, 5]} castShadow={!is2D} />
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[5, 10, 5]} castShadow={!is2D} />
 
-      {/* Floor */}
-      <Floor roomSize={roomSize} is2D={is2D} selectedFloor={selectedFloor} />
+        {/* Floor */}
+        <Floor roomSize={roomSize} is2D={is2D} selectedFloor={selectedFloor} />
 
-      {/* Walls */}
-      {!is2D && selectedWall != "Custom Color" && (
-        <Wall
-          wallColor={wallColor}
-          wallHeight={wallHeight}
-          wallThickness={wallThickness}
-          roomSize={roomSize}
-          selectedWall={selectedWall}
-        />
-      )}
-      {!is2D && selectedWall == "Custom Color" && (
-        <>
-          <Box
-            args={[roomSize, wallHeight, wallThickness]}
-            position={[0, wallHeight / 2, -roomSize / 2]}
-          >
-            <meshStandardMaterial color={wallColor} />
-          </Box>
-          <Box
-            args={[roomSize, wallHeight, wallThickness]}
-            position={[0, wallHeight / 2, roomSize / 2]}
-          >
-            <meshStandardMaterial color={wallColor} />
-          </Box>
-          <Box
-            args={[wallThickness, wallHeight, roomSize]}
-            position={[-roomSize / 2, wallHeight / 2, 0]}
-          >
-            <meshStandardMaterial color={wallColor} />
-          </Box>
-          <Box
-            args={[wallThickness, wallHeight, roomSize]}
-            position={[roomSize / 2, wallHeight / 2, 0]}
-          >
-            <meshStandardMaterial color={wallColor} />
-          </Box>
-        </>
-      )}
+        {/* Walls */}
+        {!is2D && selectedWall != "Custom Color" && (
+          <Wall
+            wallColor={wallColor}
+            wallHeight={wallHeight}
+            wallThickness={wallThickness}
+            roomSize={roomSize}
+            selectedWall={selectedWall}
+          />
+        )}
+        {!is2D && selectedWall == "Custom Color" && (
+          <>
+            <Box
+              args={[roomSize, wallHeight, wallThickness]}
+              position={[0, wallHeight / 2, -roomSize / 2]}
+            >
+              <meshStandardMaterial color={wallColor} />
+            </Box>
+            <Box
+              args={[roomSize, wallHeight, wallThickness]}
+              position={[0, wallHeight / 2, roomSize / 2]}
+            >
+              <meshStandardMaterial color={wallColor} />
+            </Box>
+            <Box
+              args={[wallThickness, wallHeight, roomSize]}
+              position={[-roomSize / 2, wallHeight / 2, 0]}
+            >
+              <meshStandardMaterial color={wallColor} />
+            </Box>
+            <Box
+              args={[wallThickness, wallHeight, roomSize]}
+              position={[roomSize / 2, wallHeight / 2, 0]}
+            >
+              <meshStandardMaterial color={wallColor} />
+            </Box>
+          </>
+        )}
 
-      {/* Furniture */}
-      {furnitureList.map((item) => (
-        <Furniture
-          key={item.id}
-          id={item.id}
-          position={item.position}
-          type={item.type}
-          color={item.color}
-          size={item.size}
-          onDragging={setIsDraggingFurniture}
-          isSelected={selectedFurnitureId === item.id}
-          onClick={() => setSelectedFurnitureId(item.id)}
-          onPositionChange={(newPos) =>
-            updateFurniturePosition(item.id, newPos)
-          }
-          viewMode={viewMode}
-        />
-      ))}
+        {/* Furniture */}
+        {furnitureList.map((item) => (
+          <Furniture
+            key={item.id}
+            id={item.id}
+            position={item.position}
+            type={item.type}
+            color={item.color}
+            size={item.size}
+            shade={item.shade}
+            shadow={item.shadow}
+            onDragging={setIsDraggingFurniture}
+            isSelected={selectedFurnitureId === item.id}
+            onClick={() => setSelectedFurnitureId(item.id)}
+            onPositionChange={(newPos) =>
+              updateFurniturePosition(item.id, newPos)
+            }
+            viewMode={viewMode}
+          />
+        ))}
 
-      <OrbitControls enabled={!isDraggingFurniture && !is2D} />
-    </Canvas>
+        <OrbitControls enabled={!isDraggingFurniture && !is2D} />
+      </Canvas>
+    </>
   );
 };
 
