@@ -20,6 +20,7 @@ namespace backend.Models
         public string? Email { get; set; }
         public string? ContactNumber { get; set; }
         public string? PasswordHash { get; set; }
-       
+        public virtual ICollection<RoomDesign> RoomDesigns { get; set; } = new List<RoomDesign>();
+
     }
 }

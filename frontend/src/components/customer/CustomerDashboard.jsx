@@ -35,6 +35,15 @@ const CustomerDashboard = () => {
   const [selectedFloor, setSelectedFloor] = useState("Tile Floor"); // Floor selection state moved to parent
   const [furnitureShadow, setFurnitureShadow] = useState(false);
 
+  const roomSceneRef = useRef();
+
+  const handleSaveDesignClick = () => {
+    if (roomSceneRef.current) {
+      roomSceneRef.current.handleSave();
+      console.log("ecuted");
+    }
+  };
+
   const removeFurniture = (id) => {
     setFurnitureList((prevList) => prevList.filter((f) => f.id !== id));
   };
@@ -169,6 +178,7 @@ const CustomerDashboard = () => {
             }}
           >
             <RoomScene
+              ref={roomSceneRef}
               wallColor={wallColor}
               wallHeight={wallHeight}
               roomSize={roomSize}
@@ -597,6 +607,18 @@ const CustomerDashboard = () => {
                       Remove Furniture
                     </button>
                   )}
+                </div>
+              </div>
+              <div className="form-group row align-items-center mb-2 ">
+                <div className="col-sm-6  "></div>
+                {/* View and settings */}
+                <div className="bg-white text-center rounded p-3">
+                  <button
+                    className="btn btn-danger mt-2"
+                    onClick={() => handleSaveDesignClick()}
+                  >
+                    Save Design
+                  </button>
                 </div>
               </div>
             </div>

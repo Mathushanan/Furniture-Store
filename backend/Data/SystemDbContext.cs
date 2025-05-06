@@ -18,6 +18,8 @@ namespace backend.Data
 
 
         public DbSet<User> Users { get; set; }
+        public DbSet<RoomDesign> RoomDesigns { get; set; }
+        public DbSet<Furniture> Furnitures { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -55,8 +57,82 @@ namespace backend.Data
                     .HasMaxLength(200)
                     .IsRequired(true);
 
-             
+                // One-to-many: User → RoomDesigns
+                entity.HasMany(u => u.RoomDesigns)
+                      .WithOne(r => r.User)
+                      .HasForeignKey(r => r.UserId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+
             });
+
+            modelBuilder.Entity<RoomDesign>(entity =>
+            {
+                entity.HasKey(r => r.RoomId);
+
+                entity.Property(r => r.RoomSize).IsRequired();
+                entity.Property(r => r.WallHeight).IsRequired();
+                entity.Property(r => r.WallThickness).IsRequired();
+                entity.Property(r => r.WallColor).HasMaxLength(100);
+                entity.Property(r => r.WallTexture).HasMaxLength(100);
+                entity.Property(r => r.FloorTexture).HasMaxLength(100);
+                entity.Property(r => r.ViewMode).HasMaxLength(10).HasDefaultValue("3D");
+
+              
+                entity.HasMany(r => r.Furnitures)
+                      .WithOne(f => f.RoomDesign)
+                      .HasForeignKey(f => f.RoomId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            // Furniture Entity
+            modelBuilder.Entity<Furniture>(entity =>
+            {
+                entity.HasKey(f => f.FurnitureId);
+
+                entity.Property(f => f.RoomId)
+                      .IsRequired(); // Foreign key
+
+                entity.Property(f => f.Type)
+                      .HasMaxLength(100)
+                      .IsRequired(false);
+
+                entity.Property(f => f.PositionX)
+                      .IsRequired();
+
+                entity.Property(f => f.PositionY)
+                      .IsRequired();
+
+                entity.Property(f => f.PositionZ)
+                      .IsRequired();
+
+                entity.Property(f => f.Color)
+                      .HasMaxLength(50)
+                      .IsRequired(false);
+
+                entity.Property(f => f.SizeWidth)
+                      .IsRequired(false); // Nullable float
+
+                entity.Property(f => f.SizeHeight)
+                      .IsRequired(false);
+
+                entity.Property(f => f.SizeLength)
+                      .IsRequired(false);
+
+                entity.Property(f => f.Shade)
+                      .HasMaxLength(50)
+                      .IsRequired(false);
+
+                entity.Property(f => f.Shadow)
+                      .IsRequired();
+
+                // Relationship with RoomDesign (many-to-one)
+                entity.HasOne(f => f.RoomDesign)
+                      .WithMany(r => r.Furnitures)
+                      .HasForeignKey(f => f.RoomId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
+
 
         }
     }

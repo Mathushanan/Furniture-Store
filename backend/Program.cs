@@ -42,6 +42,8 @@ builder.Services.AddDbContext<SystemDbContext>(options =>
 builder.Services.AddScoped<IPasswordService, PasswordService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IFurnitureService, FurnitureService>();
+builder.Services.AddScoped<IRoomDesignService, RoomDesignService>();
 
 
 
