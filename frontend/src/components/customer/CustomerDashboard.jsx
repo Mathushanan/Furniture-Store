@@ -665,13 +665,12 @@ const CustomerDashboard = () => {
                     />
                   </div>
                 </div>
-                <div className="form-group row align-items-center mb-2 ">
-                  <div className="col-sm-6  "></div>
+                <div className="form-group row align-items-center  ">
                   {/* View and settings */}
-                  <div className="bg-white text-center rounded p-3">
+                  <div className="bg-white text-center rounded p-2">
                     {selectedFurnitureId && (
                       <button
-                        className="btn btn-danger mt-2"
+                        className="btn btn-danger w-100"
                         onClick={() => removeFurniture(selectedFurnitureId)}
                       >
                         Remove Furniture
@@ -679,10 +678,9 @@ const CustomerDashboard = () => {
                     )}
                   </div>
                 </div>
-                <div className="form-group row align-items-center mb-2">
-                  <div className="col-sm-6"></div>
+                <div className="form-group row align-items-center ">
                   {/* View and settings */}
-                  <div className="bg-white text-center rounded p-3">
+                  <div className="bg-white text-center rounded p-2">
                     {/* Input for Design Name */}
                     <input
                       type="text"
@@ -693,7 +691,7 @@ const CustomerDashboard = () => {
                     />
 
                     <button
-                      className="btn btn-danger mt-2"
+                      className="btn btn-dark  w-100"
                       onClick={() => handleSaveDesignClick()}
                     >
                       Save Design

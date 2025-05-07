@@ -5,9 +5,19 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { IoMdLogOut } from "react-icons/io";
 import { AuthContext } from "../../utils/authContext"; // Adjust the path as necessary
 import { HiSaveAs } from "react-icons/hi";
+import { jwtDecode } from "jwt-decode";
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState("home");
+  const [userType, setUserType] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      setUserType(decodedToken.UserType);
+    }
+  }, []);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -110,7 +120,11 @@ const Navbar = () => {
               <>
                 <a
                   className="btn btn-warning px-4 py-2 shadow-sm me-2"
-                  href="/customer/saved-designs"
+                  href={
+                    userType === "admin"
+                      ? "/admin/saved-designs"
+                      : "/customer/saved-designs"
+                  }
                 >
                   Saved Designs
                   <HiSaveAs className="ms-2" size={20} />

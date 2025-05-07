@@ -7,7 +7,7 @@ const CustomerRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Navigate to="customer-dashboard" />} />
+        <Route path="/" element={<Navigate to="saved-designs" />} />
         <Route path="/customer-dashboard" element={<CustomerDashboard />} />
         <Route path="/saved-designs" element={<SavedDesigns />} />
       </Routes>
