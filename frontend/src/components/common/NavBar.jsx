@@ -4,6 +4,7 @@ import { IoMdLogIn } from "react-icons/io";
 import { NavLink, useNavigate } from "react-router-dom";
 import { IoMdLogOut } from "react-icons/io";
 import { AuthContext } from "../../utils/authContext"; // Adjust the path as necessary
+import { HiSaveAs } from "react-icons/hi";
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState("home");
@@ -106,10 +107,23 @@ const Navbar = () => {
                 <IoMdLogIn className="ms-2" size={20} />
               </a>
             ) : (
-              <a className="btn btn-primary px-4 py-2 shadow-sm" href="/logout">
-                Logout
-                <IoMdLogOut className="ms-2" size={20} />
-              </a>
+              <>
+                <a
+                  className="btn btn-warning px-4 py-2 shadow-sm me-2"
+                  href="/customer/saved-designs"
+                >
+                  Saved Designs
+                  <HiSaveAs className="ms-2" size={20} />
+                </a>
+
+                <a
+                  className="btn btn-primary px-4 py-2 shadow-sm"
+                  href="/logout"
+                >
+                  Logout
+                  <IoMdLogOut className="ms-2" size={20} />
+                </a>
+              </>
             )}
           </div>
         </div>

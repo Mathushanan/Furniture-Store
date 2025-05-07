@@ -10,5 +10,7 @@ namespace backend.Interfaces
     public interface IRoomDesignService
     {
         Task<RoomDesign> AddRooomDesignAsync(RoomDesign roomDesign);
+        Task<RoomDesign?> GetRoomDesignByUserIdAndNameAsync(int userId, string designName);
+        Task<List<RoomDesign>> GetRoomDesignsByUserIdAsync(int userId);
     }
 }

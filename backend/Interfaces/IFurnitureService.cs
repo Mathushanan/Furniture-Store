@@ -10,5 +10,6 @@ namespace backend.Interfaces
     public interface IFurnitureService
     {
         Task<Furniture> AddFurnitureAsync(Furniture furniture);
+        Task<List<Furniture>> GetFurnituresByRoomIdAsync(int roomId);
     }
 }

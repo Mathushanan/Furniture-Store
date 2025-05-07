@@ -26,5 +26,17 @@ namespace backend.Services
             await _systemDbContext.SaveChangesAsync();
             return roomDesign;
         }
+        public async Task<RoomDesign?> GetRoomDesignByUserIdAndNameAsync(int userId, string designName)
+        {
+            return await _systemDbContext.RoomDesigns
+                .FirstOrDefaultAsync(rd => rd.UserId == userId && rd.DesignName == designName);
+        }
+        public async Task<List<RoomDesign>> GetRoomDesignsByUserIdAsync(int userId)
+        {
+            return await _systemDbContext.RoomDesigns
+                .Where(r => r.UserId == userId)
+                .ToListAsync();
+        }
+
     }
 }

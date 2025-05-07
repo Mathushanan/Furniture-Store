@@ -23,7 +23,7 @@ namespace backend
 
 
 
-        public Functions(ILogger<Functions> logger, IPasswordService passwordService, IUserService userService, IJwtService jwtService, IRoomDesignService roomDesignService,IFurnitureService furnitureService)
+        public Functions(ILogger<Functions> logger, IPasswordService passwordService, IUserService userService, IJwtService jwtService, IRoomDesignService roomDesignService, IFurnitureService furnitureService)
         {
             _logger = logger;
             this._passwordService = passwordService;
@@ -40,69 +40,69 @@ namespace backend
 
             try
             {
-               
 
-               
-                        // Read and deserialize the JSON request body
-                        string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-                        var data = JsonConvert.DeserializeObject<UserRequestDto>(requestBody);
 
-                        if (data == null)
+
+                // Read and deserialize the JSON request body
+                string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+                var data = JsonConvert.DeserializeObject<UserRequestDto>(requestBody);
+
+                if (data == null)
+                {
+                    return new BadRequestObjectResult("Invalid JSON request body.");
+                }
+
+                //Accessing deserialized parameters
+                string? userType = data.UserType;
+                string? firstName = data.FirstName;
+                string? lastName = data.LastName;
+                string? gender = data.Gender;
+
+                string? address = data.Address;
+                string? email = data.Email;
+                string? contactNumber = data.ContactNumber;
+                string? password = data.Password;
+
+
+                if (firstName == null || lastName == null || gender == null || address == null || contactNumber == null || password == null || email == null || userType == null)
+                {
+                    return new BadRequestObjectResult("Invalid JSON request body. Required fields are missing/User type is wrong!");
+                }
+                else
+                {
+                    var existingUser = await _userService.GetUserByEmailAsync(email);
+
+                    if (existingUser != null)
+                    {
+                        return new ConflictObjectResult("User already registered!");
+                    }
+                    else
+                    {
+                        var newUser = new User
                         {
-                            return new BadRequestObjectResult("Invalid JSON request body.");
-                        }
+                            UserType = userType,
+                            FirstName = firstName,
+                            LastName = lastName,
+                            Gender = gender,
+                            Address = address,
+                            Email = email,
+                            ContactNumber = contactNumber,
 
-                        //Accessing deserialized parameters
-                        string? userType = data.UserType;
-                        string? firstName = data.FirstName;
-                        string? lastName = data.LastName;
-                        string? gender = data.Gender;
-                        
-                        string? address = data.Address;
-                        string? email = data.Email;
-                        string? contactNumber = data.ContactNumber;
-                        string? password = data.Password;
-                       
+                        };
 
-                        if (firstName == null || lastName == null || gender == null || address == null || contactNumber == null || password == null || email == null  || userType == null )
-                        {
-                            return new BadRequestObjectResult("Invalid JSON request body. Required fields are missing/User type is wrong!");
-                        }
-                        else
-                        {
-                            var existingUser = await _userService.GetUserByEmailAsync(email);
+                        newUser.PasswordHash = _passwordService.HashPassword(newUser, password!);
+                        await _userService.AddUserAsync(newUser);
+                        return new OkObjectResult("User registered successfully!");
 
-                            if (existingUser != null)
-                            {
-                                return new ConflictObjectResult("User already registered!");
-                            }
-                            else
-                            {
-                                var newUser = new User
-                                {
-                                    UserType = userType,
-                                    FirstName = firstName,
-                                    LastName = lastName,
-                                    Gender = gender,
-                                    Address = address,
-                                    Email = email,
-                                    ContactNumber = contactNumber,
-                                   
-                                };
+                    }
 
-                                newUser.PasswordHash = _passwordService.HashPassword(newUser, password!);
-                                await _userService.AddUserAsync(newUser);
-                                return new OkObjectResult("User registered successfully!");
+                }
 
-                            }
 
-                        }
 
-                    
-               
 
-                
-            
+
+
 
             }
             catch (Exception ex)
@@ -196,8 +196,12 @@ namespace backend
                         string? designName = data.DesignName;
                         DateTime createdAt = DateTime.UtcNow;
 
-
-                        if (wallColor == null || wallTexture== null || floorTexture == null || viewMode== null)
+                        var existingRoomDesign = await _roomDesignService.GetRoomDesignByUserIdAndNameAsync(userId, designName!);
+                        if (existingRoomDesign != null)
+                        {
+                            return new ConflictObjectResult("Room design with this name already exists!");
+                        }
+                        if (wallColor == null || wallTexture == null || floorTexture == null || viewMode == null)
                         {
                             return new BadRequestObjectResult("Invalid JSON request body. Required fields are missing!");
                         }
@@ -215,7 +219,7 @@ namespace backend
                                 WallTexture = wallTexture,
                                 FloorTexture = floorTexture,
                                 ViewMode = viewMode,
-                                DesignName= designName,
+                                DesignName = designName,
                                 CreatedAt = createdAt
 
 
@@ -269,5 +273,81 @@ namespace backend
 
             }
         }
+        [Function("GetDesigns")]
+        public async Task<IActionResult> GetDesigns([HttpTrigger(AuthorizationLevel.Function, "get", Route = "get-designs")] HttpRequest req)
+        {
+            try
+            {
+                if (!req.Headers.TryGetValue("Authorization", out var token))
+                {
+                    return new BadRequestObjectResult("Missing Authorization token!");
+                }
+
+                token = token.ToString().Replace("Bearer ", "");
+                var principal = _jwtService.ValidateJwtToken(token!);
+
+                if (principal == null)
+                {
+                    return new BadRequestObjectResult("Token is invalid or expired!");
+                }
+
+                var claims = principal.Claims;
+                var userRole = claims.FirstOrDefault(c => c.Type == "UserType")?.Value;
+                var userEmail = claims.FirstOrDefault(c => c.Type == "Email")?.Value;
+
+                if (userRole != "admin" && userRole != "customer")
+                {
+                    return new BadRequestObjectResult("User is not authorized for this action!");
+                }
+
+                var user = await _userService.GetUserByEmailAsync(userEmail!);
+                if (user == null)
+                {
+                    return new NotFoundObjectResult("User not found.");
+                }
+
+                int userId = user.UserId;
+                var roomDesigns = await _roomDesignService.GetRoomDesignsByUserIdAsync(userId);
+
+                var result = new List<object>();
+
+                foreach (var design in roomDesigns)
+                {
+                    var furnitures = await _furnitureService.GetFurnituresByRoomIdAsync(design.RoomId);
+
+                    var furnitureDtos = furnitures.Select(f => new
+                    {
+                        f.Type,
+                        Position = new[] { f.PositionX, f.PositionY, f.PositionZ },
+                        Size = new[] { f.SizeWidth, f.SizeHeight, f.SizeLength },
+                        f.Color,
+                        f.Shade,
+                        f.Shadow
+                    });
+
+                    result.Add(new
+                    {
+                        design.RoomId,
+                        design.DesignName,
+                        design.RoomSize,
+                        design.WallHeight,
+                        design.WallThickness,
+                        design.WallColor,
+                        design.WallTexture,
+                        design.FloorTexture,
+                        design.ViewMode,
+                        design.CreatedAt,
+                        Furnitures = furnitureDtos
+                    });
+                }
+
+                return new OkObjectResult(result);
+            }
+            catch (Exception ex)
+            {
+                return new ObjectResult(ex.Message) { StatusCode = 500 };
+            }
+        }
+
     }
 }

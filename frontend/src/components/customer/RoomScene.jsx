@@ -66,6 +66,8 @@ const RoomScene = forwardRef(
       selectedFloor,
       selectedWall,
       viewMode,
+      designName,
+      onSaveResult,
     },
     ref
   ) => {
@@ -75,6 +77,7 @@ const RoomScene = forwardRef(
     // Use the ref here
     useImperativeHandle(ref, () => ({
       handleSave,
+      onSaveResult,
     }));
 
     const handleSave = async () => {
@@ -99,9 +102,8 @@ const RoomScene = forwardRef(
           floorTexture: selectedFloor,
           viewMode: viewMode || "3D",
           furnitures: furnitureList,
+          designName: designName,
         };
-
-        console.log(requestBody);
 
         // Make the POST request using axios
         const response = await axios.post(saveUrl, requestBody, {
@@ -114,6 +116,11 @@ const RoomScene = forwardRef(
         if (response.status === 200) {
           setMessage("Design saved successfully!");
           setMessageType("success");
+          onSaveResult?.("Design saved successfully!", "success");
+        } else {
+          setMessage("Failed to save the design!");
+          setMessageType("error");
+          onSaveResult?.("Failed to save the design!", "error");
         }
       } catch (error) {
         console.log(error);
@@ -122,6 +129,7 @@ const RoomScene = forwardRef(
             (error.response ? error.response.data : error.message)
         );
         setMessageType("error");
+        onSaveResult?.(message, "error");
       }
     };
 

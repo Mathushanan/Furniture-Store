@@ -3,40 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Migrations\\20250506192157_V3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\Migrations\\20250506192157_V3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\models\\roomdesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\models\\roomdesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\dto\\roomdesignrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\dto\\roomdesignrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\interfaces\\iroomdesignservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\interfaces\\iroomdesignservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\dto\\furniturerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\dto\\furniturerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\services\\roomdesignservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\services\\roomdesignservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\interfaces\\ifurnitureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,6 +13,42 @@
     {
       "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\services\\furnitureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\services\\furnitureservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\interfaces\\iroomdesignservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\interfaces\\iroomdesignservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\dto\\roomdesignrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\dto\\roomdesignrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\services\\roomdesignservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\services\\roomdesignservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\data\\systemdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\data\\systemdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\migrations\\20250506192157_v3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\migrations\\20250506192157_v3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\models\\roomdesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\models\\roomdesign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\dto\\furniturerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\dto\\furniturerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -57,14 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\models\\furniture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\models\\furniture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\data\\systemdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\data\\systemdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Migrations\\20250506165026_V2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:backend\\Migrations\\20250506165026_V2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -101,6 +97,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\interfaces\\ipasswordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\interfaces\\ipasswordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|c:\\users\\mathu\\onedrive\\desktop\\furniturestore\\backend\\migrations\\20250506165026_v2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DEE89D-D320-46F9-A149-FE327D23B900}|backend\\backend.csproj|solutionrelative:backend\\migrations\\20250506165026_v2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -110,17 +110,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Functions.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Functions.cs",
               "RelativeDocumentMoniker": "backend\\Functions.cs",
               "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Functions.cs",
               "RelativeToolTip": "backend\\Functions.cs",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAswL8AAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAA0BAAAAAAAAAAAAACoBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-14T14:37:37.672Z",
               "IsPinned": true,
@@ -128,20 +128,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20250506192157_V3.cs",
-              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Migrations\\20250506192157_V3.cs",
-              "RelativeDocumentMoniker": "backend\\Migrations\\20250506192157_V3.cs",
-              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Migrations\\20250506192157_V3.cs",
-              "RelativeToolTip": "backend\\Migrations\\20250506192157_V3.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "RoomDesignService.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\RoomDesignService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\RoomDesignService.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\RoomDesignService.cs",
+              "RelativeToolTip": "backend\\Services\\RoomDesignService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T19:21:57.256Z",
+              "WhenOpened": "2025-05-06T17:19:44.665Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "FurnitureService.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\FurnitureService.cs",
+              "RelativeDocumentMoniker": "backend\\Services\\FurnitureService.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\FurnitureService.cs",
+              "RelativeToolTip": "backend\\Services\\FurnitureService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T17:20:00.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "RoomDesignRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Dto\\RoomDesignRequestDto.cs",
               "RelativeDocumentMoniker": "backend\\Dto\\RoomDesignRequestDto.cs",
@@ -154,54 +167,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IFurnitureService.cs",
-              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IFurnitureService.cs",
-              "RelativeDocumentMoniker": "backend\\Interfaces\\IFurnitureService.cs",
-              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IFurnitureService.cs",
-              "RelativeToolTip": "backend\\Interfaces\\IFurnitureService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T17:22:49.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FurnitureRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Dto\\FurnitureRequestDto.cs",
-              "RelativeDocumentMoniker": "backend\\Dto\\FurnitureRequestDto.cs",
-              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Dto\\FurnitureRequestDto.cs",
-              "RelativeToolTip": "backend\\Dto\\FurnitureRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T17:15:20.781Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "IRoomDesignService.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IRoomDesignService.cs",
               "RelativeDocumentMoniker": "backend\\Interfaces\\IRoomDesignService.cs",
               "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IRoomDesignService.cs",
               "RelativeToolTip": "backend\\Interfaces\\IRoomDesignService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T17:23:14.593Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RoomDesign.cs",
-              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Models\\RoomDesign.cs",
-              "RelativeDocumentMoniker": "backend\\Models\\RoomDesign.cs",
-              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Models\\RoomDesign.cs",
-              "RelativeToolTip": "backend\\Models\\RoomDesign.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAUwBUAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "IFurnitureService.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IFurnitureService.cs",
+              "RelativeDocumentMoniker": "backend\\Interfaces\\IFurnitureService.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IFurnitureService.cs",
+              "RelativeToolTip": "backend\\Interfaces\\IFurnitureService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T07:41:40.987Z",
+              "WhenOpened": "2025-05-06T17:22:49.386Z",
               "EditorCaption": ""
             },
             {
@@ -212,7 +199,7 @@
               "RelativeDocumentMoniker": "backend\\Services\\UserService.cs",
               "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\UserService.cs",
               "RelativeToolTip": "backend\\Services\\UserService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAiwBcAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAiwCUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-14T15:46:15.225Z",
               "EditorCaption": ""
@@ -220,6 +207,54 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "SystemDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Data\\SystemDbContext.cs",
+              "RelativeDocumentMoniker": "backend\\Data\\SystemDbContext.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Data\\SystemDbContext.cs",
+              "RelativeToolTip": "backend\\Data\\SystemDbContext.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwIYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:41:15.188Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FurnitureRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Dto\\FurnitureRequestDto.cs",
+              "RelativeDocumentMoniker": "backend\\Dto\\FurnitureRequestDto.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Dto\\FurnitureRequestDto.cs",
+              "RelativeToolTip": "backend\\Dto\\FurnitureRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T17:15:20.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20250506192157_V3.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Migrations\\20250506192157_V3.cs",
+              "RelativeDocumentMoniker": "backend\\Migrations\\20250506192157_V3.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Migrations\\20250506192157_V3.cs",
+              "RelativeToolTip": "backend\\Migrations\\20250506192157_V3.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T19:21:57.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RoomDesign.cs",
+              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Models\\RoomDesign.cs",
+              "RelativeDocumentMoniker": "backend\\Models\\RoomDesign.cs",
+              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Models\\RoomDesign.cs",
+              "RelativeToolTip": "backend\\Models\\RoomDesign.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAUwBUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T07:41:40.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "JwtService.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\JwtService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\JwtService.cs",
@@ -227,38 +262,11 @@
               "RelativeToolTip": "backend\\Services\\JwtService.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwCcAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:46:27.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:46:27.584Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RoomDesignService.cs",
-              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\RoomDesignService.cs",
-              "RelativeDocumentMoniker": "backend\\Services\\RoomDesignService.cs",
-              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\RoomDesignService.cs",
-              "RelativeToolTip": "backend\\Services\\RoomDesignService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T17:19:44.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FurnitureService.cs",
-              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\FurnitureService.cs",
-              "RelativeDocumentMoniker": "backend\\Services\\FurnitureService.cs",
-              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\FurnitureService.cs",
-              "RelativeToolTip": "backend\\Services\\FurnitureService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T17:20:00.899Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Program.cs",
               "RelativeDocumentMoniker": "backend\\Program.cs",
@@ -266,12 +274,11 @@
               "RelativeToolTip": "backend\\Program.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAACwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:36:39.285Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:36:39.285Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "UserRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Dto\\UserRequestDto.cs",
               "RelativeDocumentMoniker": "backend\\Dto\\UserRequestDto.cs",
@@ -279,12 +286,11 @@
               "RelativeToolTip": "backend\\Dto\\UserRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:57:13.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:57:13.034Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "20250506165026_V2.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Migrations\\20250506165026_V2.cs",
               "RelativeDocumentMoniker": "backend\\Migrations\\20250506165026_V2.cs",
@@ -292,12 +298,11 @@
               "RelativeToolTip": "backend\\Migrations\\20250506165026_V2.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T16:50:26.681Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T16:50:26.681Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Furniture.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Models\\Furniture.cs",
               "RelativeDocumentMoniker": "backend\\Models\\Furniture.cs",
@@ -305,12 +310,11 @@
               "RelativeToolTip": "backend\\Models\\Furniture.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T07:42:37.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T07:42:37.461Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "local.settings.json",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\local.settings.json",
               "RelativeDocumentMoniker": "backend\\local.settings.json",
@@ -322,20 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "SystemDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Data\\SystemDbContext.cs",
-              "RelativeDocumentMoniker": "backend\\Data\\SystemDbContext.cs",
-              "ToolTip": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Data\\SystemDbContext.cs",
-              "RelativeToolTip": "backend\\Data\\SystemDbContext.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwIYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:41:15.188Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "PasswordService.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Services\\PasswordService.cs",
               "RelativeDocumentMoniker": "backend\\Services\\PasswordService.cs",
@@ -347,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Models\\User.cs",
               "RelativeDocumentMoniker": "backend\\Models\\User.cs",
@@ -355,12 +346,11 @@
               "RelativeToolTip": "backend\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:44:28.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T15:44:28.463Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 22,
               "Title": "IJwtService.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IJwtService.cs",
               "RelativeDocumentMoniker": "backend\\Interfaces\\IJwtService.cs",
@@ -372,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 23,
               "Title": "IPasswordService.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IPasswordService.cs",
               "RelativeDocumentMoniker": "backend\\Interfaces\\IPasswordService.cs",
@@ -384,7 +374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "host.json",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\host.json",
               "RelativeDocumentMoniker": "backend\\host.json",
@@ -396,7 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "backend\\Interfaces\\IUserService.cs",
@@ -408,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "20250414160933_V1.cs",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\Migrations\\20250414160933_V1.cs",
               "RelativeDocumentMoniker": "backend\\Migrations\\20250414160933_V1.cs",
@@ -420,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 21,
               "Title": "backend.csproj",
               "DocumentMoniker": "C:\\Users\\Mathu\\OneDrive\\Desktop\\FurnitureStore\\backend\\backend.csproj",
               "RelativeDocumentMoniker": "backend\\backend.csproj",
