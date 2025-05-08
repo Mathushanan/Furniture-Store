@@ -42,10 +42,7 @@ const HomePage = () => {
           <p className="lead" style={{ fontSize: "20px" }}>
             Discover premium furniture that matches your vibe
           </p>
-          <NavLink
-            to="/customer"
-            className="btn btn-primary px-4 py-2 shadow-sm"
-          >
+          <NavLink to="/login" className="btn btn-primary px-4 py-2 shadow-sm">
             Shop Now <FiShoppingCart className="ms-2" size={20} />
           </NavLink>
         </div>
@@ -73,7 +70,7 @@ const HomePage = () => {
                     High quality and stylish {product.title.toLowerCase()} to
                     elevate your space.
                   </p>
-                  <NavLink to={`/customer`} className="btn btn-outline-primary">
+                  <NavLink to={`/login`} className="btn btn-outline-primary">
                     Purchase
                   </NavLink>
                 </div>
@@ -121,7 +118,7 @@ const HomePage = () => {
                   Custom designs tailored to your personal style
                 </li>
               </ul>
-              <NavLink to="/customer" className="btn btn-primary mt-3">
+              <NavLink to="/login" className="btn btn-primary mt-3">
                 Explore Services <MdExplore className="ms-2" size={20} />
               </NavLink>
             </div>

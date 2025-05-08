@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { FaCheckCircle, FaTimesCircle, FaEdit, FaPlus } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaTimesCircle,
+  FaEdit,
+  FaPlus,
+  FaTrash,
+} from "react-icons/fa";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -58,6 +64,44 @@ const SavedDesigns = () => {
 
   const handleNewDesign = () => {
     navigate("/customer/customer-dashboard", { state: { designData: null } });
+  };
+
+  const handleDeleteClick = async (design) => {
+    const confirmDelete = window.confirm(
+      `Are you sure you want to delete the design "${
+        design.designName || "Untitled Design"
+      }"?`
+    );
+    if (!confirmDelete) return;
+
+    try {
+      const deleteUrl = `${import.meta.env.VITE_API_BASE_URL}/delete-design`;
+      const token = localStorage.getItem("authToken");
+
+      const response = await axios.delete(deleteUrl, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        data: { roomId: design.roomId }, // ✅ PUT body here
+      });
+
+      if (response.status === 200) {
+        handleFetchDesigns();
+        setMessage("Design deleted successfully.");
+        setMessageType("success");
+      } else {
+        setMessage("Failed to delete the design.");
+        setMessageType("error");
+      }
+    } catch (error) {
+      console.error("Delete error:", error);
+      setMessage(
+        "Deletion failed: " +
+          (error.response ? error.response.data : error.message)
+      );
+      setMessageType("error");
+    }
   };
 
   return (
@@ -123,13 +167,20 @@ const SavedDesigns = () => {
                   </p>
                 </div>
 
-                <div className="card-footer bg-transparent border-top-0 d-flex justify-content-end">
+                <div className="card-footer bg-transparent border-top-0 d-flex justify-content-end gap-2">
                   <button
                     className="btn btn-sm btn-outline-primary d-flex align-items-center gap-1"
                     onClick={() => handleCardClick(design)}
                   >
                     <FaEdit />
                     Edit
+                  </button>
+                  <button
+                    className="btn btn-sm btn-outline-danger d-flex align-items-center gap-1"
+                    onClick={() => handleDeleteClick(design)}
+                  >
+                    <FaTrash />
+                    Delete
                   </button>
                 </div>
               </div>
